@@ -1,0 +1,45 @@
+﻿<Page x:Class="JewerlyStore.View.Pages.AutorizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JewerlyStore.View.Pages"
+      mc:Ignorable="d" Loaded="Page_Loaded"
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="AutorizationPage">
+
+    <Grid Background="White">
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Orientation="Vertical">
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,20">
+                <TextBlock Text="Логин:"
+                           FontSize="15"
+                           Width="70"/>
+                <TextBox x:Name="loginTxb"
+                         FontSize="15"
+                         Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,30">
+                <TextBlock Text="Пароль:"
+                           FontSize="15"
+                           Width="70"/>
+                <PasswordBox x:Name="passTxb"
+                             FontSize="15"
+                             Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <Button x:Name="comeBtn"
+                        Content="Войти"
+                        Width="120"
+                        Height="35"
+                        Background="Black"
+                        Foreground="White" Click="comeBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

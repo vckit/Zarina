@@ -1,0 +1,74 @@
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\JewerlyStore.exe.config
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\JewerlyStore.exe
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\JewerlyStore.pdb
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\EntityFramework.dll
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\EntityFramework.SqlServer.dll
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignColors.dll
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\EntityFramework.xml
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\EntityFramework.SqlServer.xml
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignColors.pdb
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\ru\EntityFramework.resources.dll
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csprojAssemblyReference.cache
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\AutorizationPage.g.cs
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\AddPage.g.cs
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\EditPage.g.cs
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\MainViewPage.g.cs
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Windows\MainWindow.g.cs
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\App.g.cs
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore_Content.g.cs
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore_MarkupCompile.cache
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore_MarkupCompile.lref
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\App.baml
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\AutorizationPage.baml
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\AddPage.baml
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\EditPage.baml
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\MainViewPage.baml
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Windows\MainWindow.baml
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.g.resources
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.Properties.Resources.resources
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.GenerateResource.cache
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CoreCompileInputs.cache
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CopyComplete
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.exe
+D:\Preparation\C-applications\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.pdb
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\JewerlyStore.exe.config
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\JewerlyStore.exe
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\JewerlyStore.pdb
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\EntityFramework.dll
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignColors.dll
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\EntityFramework.xml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignColors.pdb
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csprojAssemblyReference.cache
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\AutorizationPage.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\AddPage.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\EditPage.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\MainViewPage.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Windows\MainWindow.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\App.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore_Content.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore_MarkupCompile.cache
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore_MarkupCompile.lref
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\App.baml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\AutorizationPage.baml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\AddPage.baml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\EditPage.baml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\MainViewPage.baml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Windows\MainWindow.baml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.g.resources
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.Properties.Resources.resources
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.GenerateResource.cache
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CoreCompileInputs.cache
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CopyComplete
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.exe
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.pdb
