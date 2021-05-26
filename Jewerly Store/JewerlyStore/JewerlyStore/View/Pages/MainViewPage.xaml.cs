@@ -103,7 +103,7 @@ namespace JewerlyStore.View.Pages
                     table.Cell(i, 7).Range.Text = item.Parameters.Weight;
                     i++;
                 }
-                document.SaveAs2(@"D:\parts.pdf", Word.WdSaveFormat.wdFormatPDF);
+                document.SaveAs2(@"С:\parts.pdf", Word.WdSaveFormat.wdFormatPDF);
                 document.Close(Word.WdSaveOptions.wdDoNotSaveChanges);
                 word.Quit(Word.WdSaveOptions.wdDoNotSaveChanges);
                 MessageBox.Show("Сохранение прошло успешно!", "Сохранено!", MessageBoxButton.OK, MessageBoxImage.Information);

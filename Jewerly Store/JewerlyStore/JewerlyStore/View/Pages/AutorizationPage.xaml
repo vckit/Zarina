@@ -3,43 +3,64 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:JewerlyStore.View.Pages"
-      mc:Ignorable="d" Loaded="Page_Loaded"
+      mc:Ignorable="d"
       d:DesignHeight="600" d:DesignWidth="1000"
-      Title="AutorizationPage">
+      Title="Вход">
 
-    <Grid Background="White">
-        <StackPanel VerticalAlignment="Center"
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="#FFECECEC" Grid.Column="1">
+            <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Orientation="Vertical">
-            <StackPanel Orientation="Horizontal"
-                        Margin="0,0,0,20">
-                <TextBlock Text="Логин:"
-                           FontSize="15"
-                           Width="70"/>
-                <TextBox x:Name="loginTxb"
-                         FontSize="15"
-                         Width="200"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal"
-                        Margin="0,0,0,30">
-                <TextBlock Text="Пароль:"
-                           FontSize="15"
-                           Width="70"/>
-                <PasswordBox x:Name="passTxb"
+                <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,10">
+                    <TextBox x:Name="loginTxb"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             materialDesign:HintAssist.Hint="Имя пользователя"
                              FontSize="15"
-                             Width="200"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal"
+                             Width="250"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,10">
+                    <PasswordBox x:Name="passTxb"
+                             FontSize="15"
+                                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                                 materialDesign:HintAssist.Hint="Пароль"
+                             Width="250"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Center"
-                        HorizontalAlignment="Center">
-                <Button x:Name="comeBtn"
+                        HorizontalAlignment="Right">
+                    <Button x:Name="comeBtn"
                         Content="Войти"
                         Width="120"
                         Height="35"
                         Background="Black"
-                        Foreground="White" Click="comeBtn_Click"/>
+                        Foreground="White" 
+                        Click="comeBtn_Click"
+                            IsDefault="True"/>
+                    <Button Content="Отмена"
+                        Background="Black"
+                        Margin="10,0,0,0"
+                        Foreground="White"
+                        Width="120"
+                        Height="35"
+                        Name="btnCancel"
+                        Click="btnCancel_Click"/>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="0"
+              Background="#FFECECEC">
+            <Image Source="/Resources/la.png"/>
+        </Grid>
     </Grid>
+    
 </Page>

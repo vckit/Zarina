@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JewerlyStore"
         mc:Ignorable="d" Loaded="Window_Loaded"
-        Title="MainWindow" Height="600" Width="1000">
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding ElementName=mainFrame, Path=Content.Title}" Height="600" Width="1000">
     <Grid>
         <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>

@@ -14,6 +14,12 @@ namespace JewerlyStore.DB
     
     public partial class Jewelry
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Jewelry()
+        {
+            this.Check = new HashSet<Check>();
+        }
+    
         public int ID { get; set; }
         public byte[] JewImg { get; set; }
         public string JewName { get; set; }
@@ -24,5 +30,7 @@ namespace JewerlyStore.DB
     
         public virtual Category Category { get; set; }
         public virtual Parameters Parameters { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Check> Check { get; set; }
     }
 }

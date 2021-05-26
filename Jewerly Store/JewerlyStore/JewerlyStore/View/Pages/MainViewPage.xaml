@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:JewerlyStore.View.Pages"
       mc:Ignorable="d" Loaded="Page_Loaded"
       d:DesignHeight="600" d:DesignWidth="1000"
-      Title="MainViewPage">
+      Title="Окно: Меню">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -24,7 +24,8 @@
                            Width="70"/>
                 <TextBox x:Name="searchTxb"
                          FontSize="15"
-                         Width="200" TextChanged="searchTxb_TextChanged"/>
+                         Width="200" 
+                         TextChanged="searchTxb_TextChanged"/>
             </StackPanel>
         </Grid>
 

@@ -2,20 +2,13 @@
 using JewerlyStore.DB;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace JewerlyStore.View.Pages.FunctionsWithData
 {
@@ -64,39 +57,79 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
         //Кнопка изменения
         private void editBtn_Click(object sender, RoutedEventArgs e)
         {
-            var editJewelry = ConnectClass.db.Jewelry.FirstOrDefault(item => item.ID == selectedItem.ID);
+            try
+            {
 
-            //Добавление изображения
-            MemoryStream stream = new MemoryStream();
-            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create((BitmapImage)imgLoad.Source));
-            encoder.Save(stream);
-            editJewelry.JewImg = stream.ToArray();
+                var editJewelry = ConnectClass.db.Jewelry.FirstOrDefault(item => item.ID == selectedItem.ID);
 
-            editJewelry.JewName = jewNameTxb.Text;
-            editJewelry.Category.Title = categoryCmb.Text;
-            editJewelry.Material = materialTxb.Text;
-            editJewelry.Pice = Convert.ToInt64(priceTxb.Text);
-            editJewelry.Parameters.Height = heightTxb.Text;
-            editJewelry.Parameters.Width = widthTxb.Text;
-            editJewelry.Parameters.Weight = weightTxb.Text;
+                //Добавление изображения
+                MemoryStream stream = new MemoryStream();
+                JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create((BitmapImage)imgLoad.Source));
+                encoder.Save(stream);
+                editJewelry.JewImg = stream.ToArray();
 
-            ConnectClass.db.SaveChanges();
+                editJewelry.JewName = jewNameTxb.Text;
+                editJewelry.Category.Title = categoryCmb.Text;
+                editJewelry.Material = materialTxb.Text;
+                editJewelry.Pice = Convert.ToInt64(priceTxb.Text);
+                editJewelry.Parameters.Height = heightTxb.Text;
+                editJewelry.Parameters.Width = widthTxb.Text;
+                editJewelry.Parameters.Weight = weightTxb.Text;
 
-            MessageBox.Show("Данные были успешно изменены!");
-            NavigationService.GoBack();
+                ConnectClass.db.SaveChanges();
+
+                MessageBox.Show("Данные были успешно изменены!");
+                NavigationService.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка при сохранении!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         //Кнопка открытия изображения
         private void openBtn_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "Image (*.png; *.jpeg; *.jpg;) | *.png; *.jpeg; *.jpg;";
-            if (file.ShowDialog() == true)
+            try
             {
-                BitmapImage imgBitmap = new BitmapImage(new Uri(file.FileName));
-                imgLoad.Source = imgBitmap;
+
+                OpenFileDialog file = new OpenFileDialog();
+                file.Filter = "Image (*.png; *.jpeg; *.jpg;) | *.png; *.jpeg; *.jpg;";
+                if (file.ShowDialog() == true)
+                {
+                    BitmapImage imgBitmap = new BitmapImage(new Uri(file.FileName));
+                    imgLoad.Source = imgBitmap;
+                }
             }
+            catch
+            {
+                MessageBox.Show("Выберите пожалуйста картинку.", "Произошла ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void priceTxb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+
+        }
+
+        private void heightTxb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+
+        }
+
+        private void widthTxb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+
+        }
+
+        private void weightTxb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+
         }
     }
 }

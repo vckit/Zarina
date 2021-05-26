@@ -16,6 +16,9 @@ GO
 INSERT INTO [SignIn] ([LogIn], [Password], [RoleID]) VALUES ('Zarina','12345','A')
 INSERT INTO [SignIn] ([LogIn], [Password], [RoleID]) VALUES ('zarina','12345','A')
 
+INSERT INTO [SignIn] ([LogIn], [Password], [RoleID]) VALUES ('a','a','A')
+
+select * from SignIn
 CREATE TABLE [Role]
 (
 	[ID]					NCHAR(1)					NOT NULL,

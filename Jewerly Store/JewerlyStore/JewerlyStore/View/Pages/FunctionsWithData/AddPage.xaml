@@ -5,8 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:JewerlyStore.View.Pages.FunctionsWithData"
       mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       d:DesignHeight="600" d:DesignWidth="1000"
-      Title="AddPage">
+      Title="Добавление">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -32,7 +33,7 @@
                             Content="Открыть"
                             Background="Black"
                             Foreground="White"
-                            Width="120"
+                            Width="200"
                             Height="35" Click="openBtn_Click"/>
                 </StackPanel>
             </Grid>
@@ -43,63 +44,61 @@
                             Orientation="Vertical">
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,0,0,20">
-                        <TextBlock Text="Изделие:"
-                                    FontSize="15"
-                                   Width="200"/>
                         <TextBox x:Name="jewNameTxb"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                  FontSize="15"
+                                 materialDesign:HintAssist.Hint="Изделие"
                                  Width="200"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,0,0,20">
-                        <TextBlock Text="Категория:"
-                                    FontSize="15"
-                                   Width="200"/>
                         <ComboBox x:Name="categoryCmb"
+                                 Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                                 FontSize="15"
+                                  materialDesign:HintAssist.Hint="Категория"
                                  Width="200"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0,0,0,20">
-                        <TextBlock Text="Материал:"
-                                   FontSize="15"
-                                   Width="200"/>
+                    <StackPanel Orientation="Horizontal">
+
                         <TextBox x:Name="materialTxb"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 materialDesign:HintAssist.Hint="Материал"
                                  FontSize="15"
                                  Width="200"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,0,0,20">
-                        <TextBlock Text="Цена:"
-                                   FontSize="15"
-                                   Width="200"/>
                         <TextBox x:Name="priceTxb"
+                                 PreviewTextInput="priceTxb_PreviewTextInput"
+                                 materialDesign:HintAssist.Hint="Цена"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 
                                  FontSize="15"
                                  Width="200"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,0,0,20">
-                        <TextBlock Text="Высота изделия:"
-                                   FontSize="15"
-                                   Width="200"/>
                         <TextBox x:Name="heightTxb"
+                                 PreviewTextInput="heightTxb_PreviewTextInput"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 materialDesign:HintAssist.Hint="Высота"
                                  FontSize="15"
                                  Width="200"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,0,0,20">
-                        <TextBlock Text="Ширина изделия:"
-                                    FontSize="15"
-                                   Width="200"/>
                         <TextBox x:Name="widthTxb"
+                                 PreviewTextInput="widthTxb_PreviewTextInput"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 materialDesign:HintAssist.Hint="Ширина"
                                  FontSize="15"
                                  Width="200"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Вес изделия:"
-                                   FontSize="15"
-                                   Width="200"/>
                         <TextBox x:Name="weightTxb"
+                                 PreviewTextInput="weightTxb_PreviewTextInput"
+                                 materialDesign:HintAssist.Hint="Вес"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                  FontSize="15"
                                  Width="200"/>
                     </StackPanel>
@@ -115,14 +114,14 @@
                         Content="Назад"
                         Background="Black"
                         Foreground="White"
-                        Width="120"
+                        Width="200"
                         Height="35"
                         Margin="0,0,20,0" Click="backBtn_Click"/>
                 <Button x:Name="addBtn"
                         Content="Добавить"
                         Background="Black"
                         Foreground="White"
-                        Width="120"
+                        Width="200"
                         Height="35" Click="addBtn_Click"/>
             </StackPanel>
         </Grid>

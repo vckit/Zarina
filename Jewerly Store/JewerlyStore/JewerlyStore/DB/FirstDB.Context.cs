@@ -31,5 +31,7 @@ namespace JewerlyStore.DB
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<SignIn> SignIn { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Check> Check { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
     }
 }

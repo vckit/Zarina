@@ -21,6 +21,7 @@
     <Property Name="ParametersID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Category" Relationship="Self.FK_Jewerly_CategoryID_Category_ID" FromRole="Jewelry" ToRole="Category" />
     <NavigationProperty Name="Parameters" Relationship="Self.FK_Jewerly_ParametersID_Parameters_ID" FromRole="Jewelry" ToRole="Parameters" />
+    <NavigationProperty Name="Check" Relationship="JewelryStoreModel.FK_Check_Jewelry" FromRole="Jewelry" ToRole="Check" />
   </EntityType>
   <EntityType Name="Parameters">
     <Key>
@@ -115,5 +116,63 @@
       <End Role="Role" EntitySet="Role" />
       <End Role="SignIn" EntitySet="SignIn" />
     </AssociationSet>
+    <EntitySet Name="Check" EntityType="JewelryStoreModel.Check" />
+    <EntitySet Name="Client" EntityType="JewelryStoreModel.Client" />
+    <AssociationSet Name="FK_Check_Client" Association="JewelryStoreModel.FK_Check_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Check" EntitySet="Check" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Check_Jewelry" Association="JewelryStoreModel.FK_Check_Jewelry">
+      <End Role="Jewelry" EntitySet="Jewelry" />
+      <End Role="Check" EntitySet="Check" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Check">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="IDClient" Type="Int32" Nullable="false" />
+    <Property Name="IDJewelry" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Commission" Type="Double" />
+    <Property Name="TotalPrice" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="JewelryStoreModel.FK_Check_Client" FromRole="Check" ToRole="Client" />
+    <NavigationProperty Name="Jewelry" Relationship="JewelryStoreModel.FK_Check_Jewelry" FromRole="Check" ToRole="Jewelry" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SecondName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Check" Relationship="JewelryStoreModel.FK_Check_Client" FromRole="Client" ToRole="Check" />
+  </EntityType>
+  <Association Name="FK_Check_Client">
+    <End Type="JewelryStoreModel.Client" Role="Client" Multiplicity="1" />
+    <End Type="JewelryStoreModel.Check" Role="Check" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Check">
+        <PropertyRef Name="IDClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Check_Jewelry">
+    <End Type="JewelryStoreModel.Jewelry" Role="Jewelry" Multiplicity="1" />
+    <End Type="JewelryStoreModel.Check" Role="Check" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jewelry">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Check">
+        <PropertyRef Name="IDJewelry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

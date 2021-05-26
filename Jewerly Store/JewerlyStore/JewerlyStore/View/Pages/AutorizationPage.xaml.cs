@@ -26,11 +26,6 @@ namespace JewerlyStore.View.Pages
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void comeBtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -41,7 +36,7 @@ namespace JewerlyStore.View.Pages
                     switch (currentUser.RoleID)
                     {
                         case "A":
-                            NavigationService.Navigate(new MainViewPage());
+                            NavigationService.Navigate(new MenuPage());
                             break;
                     }
                 }
@@ -54,6 +49,11 @@ namespace JewerlyStore.View.Pages
             {
                 MessageBox.Show(ex.Message, ex.Source + " выдал исключение", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

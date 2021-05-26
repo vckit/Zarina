@@ -72,3 +72,11 @@ C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Stor
 C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CopyComplete
 C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.exe
 C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.pdb
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\MenuPage.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\MenuPage.baml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Windows\About.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Windows\About.baml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\CheckoutPage.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\CheckoutPage.baml
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\PaymentPage.g.cs
+C:\Users\thevc\Downloads\Telegram Desktop\Зарина\Зарина\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\PaymentPage.baml

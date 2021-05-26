@@ -84,11 +84,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\FunctionsWithData\CheckoutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\FunctionsWithData\EditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\FunctionsWithData\PaymentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\MainViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,6 +118,12 @@
     </Compile>
     <Compile Include="Classes\ConnectClass.cs" />
     <Compile Include="DB\Category.cs">
+      <DependentUpon>FirstDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Check.cs">
+      <DependentUpon>FirstDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Client.cs">
       <DependentUpon>FirstDB.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\FirstDB.Context.cs">
@@ -125,6 +147,8 @@
     <Compile Include="DB\Parameters.cs">
       <DependentUpon>FirstDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\PartialClient.cs" />
+    <Compile Include="DB\PartialJewelry.cs" />
     <Compile Include="DB\Role.cs">
       <DependentUpon>FirstDB.tt</DependentUpon>
     </Compile>
@@ -140,11 +164,23 @@
     <Compile Include="View\Pages\FunctionsWithData\AddPage.xaml.cs">
       <DependentUpon>AddPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\FunctionsWithData\CheckoutPage.xaml.cs">
+      <DependentUpon>CheckoutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\FunctionsWithData\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\FunctionsWithData\PaymentPage.xaml.cs">
+      <DependentUpon>PaymentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\MainViewPage.xaml.cs">
       <DependentUpon>MainViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -197,6 +233,7 @@
       <DependentUpon>FirstDB.edmx</DependentUpon>
       <LastGenOutput>FirstDB.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\la.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

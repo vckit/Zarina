@@ -14,6 +14,10 @@
         <AssociationConnector Association="JewelryStoreModel.FK_Jewerly_CategoryID_Category_ID" ManuallyRouted="false" />
         <AssociationConnector Association="JewelryStoreModel.FK_Jewerly_ParametersID_Parameters_ID" ManuallyRouted="false" />
         <AssociationConnector Association="JewelryStoreModel.FK_SignIn_RoleID_Role_ID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="JewelryStoreModel.Check" Width="1.5" PointX="8.25" PointY="1.25" />
+        <EntityTypeShape EntityType="JewelryStoreModel.Client" Width="1.5" PointX="6" PointY="8.375" />
+        <AssociationConnector Association="JewelryStoreModel.FK_Check_Client" />
+        <AssociationConnector Association="JewelryStoreModel.FK_Check_Jewelry" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

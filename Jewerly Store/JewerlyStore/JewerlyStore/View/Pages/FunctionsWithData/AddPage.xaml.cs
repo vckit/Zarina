@@ -2,20 +2,12 @@
 using JewerlyStore.DB;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace JewerlyStore.View.Pages.FunctionsWithData
 {
@@ -43,46 +35,81 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             Jewelry newJewelry = new Jewelry();
             Category newCategory = new Category();
             Parameters newParameteres = new Parameters();
+            try
+            {
+                //Добавление изобржения
+                MemoryStream stream = new MemoryStream();
+                JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create((BitmapImage)imgLoad.Source));
+                encoder.Save(stream);
+                newJewelry.JewImg = stream.ToArray();
+                //-------------------------------------------------------------------
 
-            //Добавление изобржения
-            MemoryStream stream = new MemoryStream();
-            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create((BitmapImage)imgLoad.Source));
-            encoder.Save(stream);
-            newJewelry.JewImg = stream.ToArray();
-            //-------------------------------------------------------------------
+                newJewelry.JewName = jewNameTxb.Text;
+                newJewelry.Material = materialTxb.Text;
+                newJewelry.Pice = Convert.ToInt64(priceTxb.Text);
+                newJewelry.ParametersID = newParameteres.ID;
 
-            newJewelry.JewName = jewNameTxb.Text;
-            newJewelry.Material = materialTxb.Text;
-            newJewelry.Pice = Convert.ToInt64(priceTxb.Text);
-            newJewelry.ParametersID = newParameteres.ID;
+                var jewCategory = ConnectClass.db.Category.FirstOrDefault(item => item.Title == categoryCmb.Text);
+                newJewelry.CategoryID = jewCategory.ID;
 
-            var jewCategory = ConnectClass.db.Category.FirstOrDefault(item => item.Title == categoryCmb.Text);
-            newJewelry.CategoryID = jewCategory.ID;
+                newParameteres.Height = heightTxb.Text;
+                newParameteres.Width = widthTxb.Text;
+                newParameteres.Weight = widthTxb.Text;
 
-            newParameteres.Height = heightTxb.Text;
-            newParameteres.Width = widthTxb.Text;
-            newParameteres.Weight = widthTxb.Text;
+                ConnectClass.db.Parameters.Add(newParameteres);
+                ConnectClass.db.Jewelry.Add(newJewelry);
 
-            ConnectClass.db.Parameters.Add(newParameteres);
-            ConnectClass.db.Jewelry.Add(newJewelry);
+                ConnectClass.db.SaveChanges();
 
-            ConnectClass.db.SaveChanges();
-
-            MessageBox.Show("Данные были успешно добавлены!");
-            NavigationService.GoBack();
+                MessageBox.Show("Данные были успешно добавлены!");
+                NavigationService.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка при сохранении!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
 
         //Кнопка открытия изображения
         private void openBtn_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "Image (*.png; *.jpeg; *.jpg;) | *.png; *.jpeg; *.jpg;";
-            if(file.ShowDialog() == true)
+            try
             {
-                BitmapImage imgBitmap = new BitmapImage(new Uri(file.FileName));
-                imgLoad.Source = imgBitmap;
+                OpenFileDialog file = new OpenFileDialog();
+                file.Filter = "Image (*.png; *.jpeg; *.jpg;) | *.png; *.jpeg; *.jpg;";
+                if (file.ShowDialog() == true)
+                {
+                    BitmapImage imgBitmap = new BitmapImage(new Uri(file.FileName));
+                    imgLoad.Source = imgBitmap;
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Выберите пожалуйста картинку.", "Произошла ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
+        }
+
+        private void priceTxb_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
+        private void heightTxb_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
+        private void widthTxb_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
+        private void weightTxb_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
         }
     }
 }

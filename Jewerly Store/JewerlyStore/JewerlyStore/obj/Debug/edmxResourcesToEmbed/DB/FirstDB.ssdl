@@ -7,6 +7,27 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <EntityType Name="Check">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="IDClient" Type="int" Nullable="false" />
+    <Property Name="IDJewelry" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Commission" Type="float" />
+    <Property Name="TotalPrice" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecondName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="char" MaxLength="30" Nullable="false" />
+  </EntityType>
   <EntityType Name="Jewelry">
     <Key>
       <PropertyRef Name="ID" />
@@ -54,6 +75,30 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Association Name="FK_Check_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Check" Type="Self.Check" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Check">
+        <PropertyRef Name="IDClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Check_Jewelry">
+    <End Role="Jewelry" Type="Self.Jewelry" Multiplicity="1" />
+    <End Role="Check" Type="Self.Check" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jewelry">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Check">
+        <PropertyRef Name="IDJewelry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Jewerly_CategoryID_Category_ID">
     <End Role="Category" Type="Self.Category" Multiplicity="1" />
     <End Role="Jewelry" Type="Self.Jewelry" Multiplicity="*" />
@@ -92,11 +137,21 @@
   </Association>
   <EntityContainer Name="Хранилище JewelryStoreModelContainer">
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Check" EntityType="Self.Check" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Jewelry" EntityType="Self.Jewelry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Parameters" EntityType="Self.Parameters" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SignIn" EntityType="Self.SignIn" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Check_Client" Association="Self.FK_Check_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Check" EntitySet="Check" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Check_Jewelry" Association="Self.FK_Check_Jewelry">
+      <End Role="Jewelry" EntitySet="Jewelry" />
+      <End Role="Check" EntitySet="Check" />
+    </AssociationSet>
     <AssociationSet Name="FK_Jewerly_CategoryID_Category_ID" Association="Self.FK_Jewerly_CategoryID_Category_ID">
       <End Role="Category" EntitySet="Category" />
       <End Role="Jewelry" EntitySet="Jewelry" />
