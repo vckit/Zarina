@@ -1,5 +1,6 @@
 ﻿using JewerlyStore.Classes;
 using JewerlyStore.DB;
+using JewerlyStore.View.Pages.PlaceHolder;
 using System;
 using System.Linq;
 using System.Windows;
@@ -33,7 +34,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                 check.TotalPrice = total;
                 ConnectClass.db.Check.Add(check);
                 ConnectClass.db.SaveChanges();
-                MessageBox.Show("Success!");
+                NavigationService.Navigate(new OrderDone(check));
             }
             catch (Exception ex)
             {

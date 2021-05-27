@@ -124,3 +124,7 @@ A:\github\repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\Je
 A:\github\repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CopyComplete
 A:\github\repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.exe
 A:\github\repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.pdb
+A:\github\repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\PlaceHolder\OrderDone.g.cs
+A:\github\repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\PlaceHolder\OrderDone.baml
+A:\github\repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\GetCheckPage.g.cs
+A:\github\repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\GetCheckPage.baml

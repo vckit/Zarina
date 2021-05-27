@@ -39,8 +39,8 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 Client client = new Client();
                 client.FirstName = txbFirstName.Text;
                 client.LastName = txbLastName.Text;
@@ -50,11 +50,11 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                 ConnectClass.db.SaveChanges();
                 MessageBox.Show("Клиент добавлен.", "Операция прошла успешно!", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService.Navigate(new PaymentPage());
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
