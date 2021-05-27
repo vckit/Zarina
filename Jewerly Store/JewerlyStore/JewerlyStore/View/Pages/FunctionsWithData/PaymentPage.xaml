@@ -7,18 +7,35 @@
       mc:Ignorable="d" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PaymentPage">
+      Title="Оформление заказа">
 
     <Grid>
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center">
+            <StackPanel VerticalAlignment="Top"
+                        HorizontalAlignment="Left">
+                <TextBlock Text="Оформите заказ"
+                           FontSize="14"/>
+            </StackPanel>
             <ComboBox Name="cmbSelectClient"
                       Width="300"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                       materialDesign:HintAssist.Hint="Выберите клиента"/>
             <ComboBox Name="cmbSelectJewely"
+                      SelectionChanged="cmbSelectJewely_SelectionChanged"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                       materialDesign:HintAssist.Hint="Выберите изделие"/>
+            <TextBox Name="txbTotalPrice"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     materialDesign:HintAssist.Hint="Итоговая цена"/>
+            <Button Content="Офорить заказ"
+                    Foreground="White"
+                    Background="Black"
+                    Margin="0,5,0,0"
+                    Name="btnOrderDone"
+                    Click="btnOrderDone_Click"
+                    materialDesign:ButtonAssist.CornerRadius="15" 
+                    />
         </StackPanel>
     </Grid>
 </Page>

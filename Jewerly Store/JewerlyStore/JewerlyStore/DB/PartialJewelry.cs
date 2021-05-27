@@ -12,7 +12,7 @@ namespace JewerlyStore.DB
         {
             get
             {
-                //return JewName + ", " + Material + ", " + Parameters.
+                return JewName + ", " + Material + ", " + Category.Title + ", " + Pice; 
             }
         }
     }

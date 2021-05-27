@@ -29,8 +29,8 @@ namespace JewerlyStore.DB
         public int ParametersID { get; set; }
     
         public virtual Category Category { get; set; }
-        public virtual Parameters Parameters { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Check> Check { get; set; }
+        public virtual Parameters Parameters { get; set; }
     }
 }

@@ -1,6 +1,6 @@
-CREATE DATABASE [JewelryStore]
-USE JewelryStore
-GO
+--CREATE DATABASE [JewelryStore]
+--USE JewelryStore
+--GO
 
 /* Autorization */
 CREATE TABLE [SignIn]

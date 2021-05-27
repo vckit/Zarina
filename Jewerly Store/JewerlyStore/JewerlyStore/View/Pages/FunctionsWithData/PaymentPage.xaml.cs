@@ -1,18 +1,9 @@
 ﻿using JewerlyStore.Classes;
+using JewerlyStore.DB;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace JewerlyStore.View.Pages.FunctionsWithData
 {
@@ -21,11 +12,39 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
     /// </summary>
     public partial class PaymentPage : Page
     {
+        public float total { get; set; }
         public PaymentPage()
         {
             InitializeComponent();
             cmbSelectClient.ItemsSource = ConnectClass.db.Client.ToList();
             cmbSelectClient.DisplayMemberPath = "FullName";
+            cmbSelectJewely.ItemsSource = ConnectClass.db.Jewelry.ToList();
+            cmbSelectJewely.DisplayMemberPath = "JewelryGet";
+        }
+
+        private void btnOrderDone_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Check check = new Check();
+                check.IDClient = (cmbSelectClient.SelectedItem as Client).ID;
+                check.IDJewelry = (cmbSelectJewely.SelectedItem as Jewelry).ID;
+                check.Date = DateTime.Now;
+                check.TotalPrice = total;
+                ConnectClass.db.Check.Add(check);
+                ConnectClass.db.SaveChanges();
+                MessageBox.Show("Success!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmbSelectJewely_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            total = (cmbSelectJewely.SelectedItem as Jewelry).Pice;
+            txbTotalPrice.Text = total.ToString();
         }
     }
 }
