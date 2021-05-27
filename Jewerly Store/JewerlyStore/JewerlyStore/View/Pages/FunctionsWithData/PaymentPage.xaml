@@ -10,6 +10,17 @@
       Title="Оформление заказа">
 
     <Grid>
+        <StackPanel VerticalAlignment="Top"
+                    HorizontalAlignment="Left">
+            <Button Name="btnBack"
+                    Content="Назад"
+                    Margin="10"
+                    Foreground="White"
+                    Background="Black"
+                    Width="150"
+                    Click="btnBack_Click"
+                    materialDesign:ButtonAssist.CornerRadius="10"/>
+        </StackPanel>
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center">
             <StackPanel VerticalAlignment="Top"

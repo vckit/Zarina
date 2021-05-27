@@ -47,5 +47,10 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             total = (cmbSelectJewely.SelectedItem as Jewelry).Pice;
             txbTotalPrice.Text = total.ToString();
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

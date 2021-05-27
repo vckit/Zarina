@@ -15,7 +15,7 @@
                     Name="btnCheckout"
                     Foreground="White"
                     Background="Black"
-                    Width="250"
+                    Width="350"
                     Click="btnCheckout_Click"/>
             <Button Content="Товар"
                     Name="btnProducts"

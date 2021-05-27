@@ -15,5 +15,21 @@ namespace JewerlyStore.DB
                 return JewName + ", " + Material + ", " + Category.Title + ", " + Pice; 
             }
         }
+
+        public string JewelryCheckGet
+        {
+            get
+            {
+                return "Наименование: " + JewName + ", Категория: " + Category.Title;
+            }
+        }
+
+        public string Price
+        {
+            get
+            {
+                return Pice + " рублей";
+            }
+        }
     }
 }

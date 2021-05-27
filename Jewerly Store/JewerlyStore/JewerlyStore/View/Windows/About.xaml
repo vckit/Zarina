@@ -6,8 +6,27 @@
         xmlns:local="clr-namespace:JewerlyStore.View.Windows"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize" WindowStyle="ToolWindow"
-        Title="About" Height="300" Width="400">
+        Title="О нас" Height="300" Width="400">
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+            <StackPanel>
+                <Image Source="/Resources/info.jpg"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Copyright ©  2021"
+                           FontSize="21"/>
+                <TextBlock Text="Автор: Ахмедова Зарина"
+                           Margin="0,10,0,10"
+                           FontSize="14"/>
+                <TextBlock Text="Программное обеспечение"/>
+                <TextBlock Text="Дипломная работа:"
+                           Margin="0,10,0,10"/>
+                <TextBlock Text="ГБПОУ Технический колледж"/>
+                <TextBlock Text="имени Р.Н. Ашуралиева."/>
+
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

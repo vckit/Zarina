@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:JewerlyStore.View.Pages"
       mc:Ignorable="d" Loaded="Page_Loaded"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       d:DesignHeight="600" d:DesignWidth="1000"
       Title="Окно: Меню">
 
@@ -19,12 +20,11 @@
             <StackPanel VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
-                <TextBlock Text="Поиск:"
-                           FontSize="15"
-                           Width="70"/>
                 <TextBox x:Name="searchTxb"
                          FontSize="15"
-                         Width="200" 
+                         materialDesign:HintAssist.Hint="Поиск"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         Width="250" 
                          TextChanged="searchTxb_TextChanged"/>
             </StackPanel>
         </Grid>

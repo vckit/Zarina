@@ -12,7 +12,9 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal"
+                        Name="pirntStackpanel"
+                        Margin="40">
                 <StackPanel Margin="0,0,30,0">
                     <TextBlock Text="ФИО Клиента: "/>
                     <TextBlock Text="Изделие: "
@@ -22,7 +24,7 @@
                            Margin="0,10,0,10"/>
                     <TextBlock Text="Итого: "/>
                 </StackPanel>
-                <StackPanel Width="300">
+                <StackPanel Width="400">
                     <TextBlock Name="txbFioClient"
                        Text="Client FIO"/>
                     <TextBlock Name="txbJewName"
