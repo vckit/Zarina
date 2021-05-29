@@ -76,10 +76,11 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                 editJewelry.Parameters.Height = heightTxb.Text;
                 editJewelry.Parameters.Width = widthTxb.Text;
                 editJewelry.Parameters.Weight = weightTxb.Text;
+                editJewelry.Count = Convert.ToInt32(txbCount.Text);
 
                 ConnectClass.db.SaveChanges();
 
-                MessageBox.Show("Данные были успешно изменены!");
+                MessageBox.Show("Данные успешно обновились.", "Операция прошла успешно!", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService.GoBack();
             }
             catch (Exception ex)
@@ -130,6 +131,11 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
         {
             e.Handled = "0123456789".IndexOf(e.Text) < 0;
 
+        }
+
+        private void txbCount_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
         }
     }
 }

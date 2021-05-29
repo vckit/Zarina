@@ -13,6 +13,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
     /// </summary>
     public partial class PaymentPage : Page
     {
+        private int _count { get; set; }
         public float total { get; set; }
         public PaymentPage()
         {
@@ -32,6 +33,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                 check.IDJewelry = (cmbSelectJewely.SelectedItem as Jewelry).ID;
                 check.Date = DateTime.Now;
                 check.TotalPrice = total;
+                check.Count = _count;
                 ConnectClass.db.Check.Add(check);
                 ConnectClass.db.SaveChanges();
                 NavigationService.Navigate(new OrderDone(check));
@@ -51,6 +53,28 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void btnAddOrder_Click(object sender, RoutedEventArgs e)
+        {
+            ComboBox combo = new ComboBox();
+            combo.ItemsSource = ConnectClass.db.Jewelry.ToList();
+            combo.DisplayMemberPath = "JewelryGet";
+            
+            SimpleComboBox.Children.Add(combo);
+        }
+
+        private void btnAddCount_Click(object sender, RoutedEventArgs e)
+        {
+            _count++;
+            txbCount.Text = _count.ToString();
+        }
+
+        private void btnRemoveCount_Click(object sender, RoutedEventArgs e)
+        {
+            if (_count != 0)
+                _count--;
+            txbCount.Text = _count.ToString();
         }
     }
 }

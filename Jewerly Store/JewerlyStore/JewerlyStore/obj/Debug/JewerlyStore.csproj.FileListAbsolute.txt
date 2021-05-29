@@ -142,7 +142,6 @@ C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\
 C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
-C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csprojAssemblyReference.cache
 C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\AutorizationPage.g.cs
 C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\AddPage.g.cs
 C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\CheckoutPage.g.cs
@@ -177,3 +176,6 @@ C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\
 C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CopyComplete
 C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.exe
 C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.pdb
+C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\HistoryPage.g.cs
+C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\HistoryPage.baml
+C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csprojAssemblyReference.cache

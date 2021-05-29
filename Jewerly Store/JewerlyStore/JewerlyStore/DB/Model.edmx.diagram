@@ -5,14 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e1564eda585f4159bef15ccc8cd44bf7" Name="Diagram1">
-        <EntityTypeShape EntityType="JewelryStoreModel.Category" Width="1.5" PointX="0.75" PointY="5.625" />
-        <EntityTypeShape EntityType="JewelryStoreModel.Check" Width="1.5" PointX="5.25" PointY="1.125" />
-        <EntityTypeShape EntityType="JewelryStoreModel.Client" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="JewelryStoreModel.Category" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="JewelryStoreModel.Check" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="JewelryStoreModel.Client" Width="1.5" PointX="3" PointY="5.5" />
         <EntityTypeShape EntityType="JewelryStoreModel.Jewelry" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="JewelryStoreModel.Parameters" Width="1.5" PointX="0.75" PointY="1.5" />
         <EntityTypeShape EntityType="JewelryStoreModel.Role" Width="1.5" PointX="5.75" PointY="5.125" />
         <EntityTypeShape EntityType="JewelryStoreModel.SignIn" Width="1.5" PointX="8" PointY="4.875" />
-        <EntityTypeShape EntityType="JewelryStoreModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" />
         <AssociationConnector Association="JewelryStoreModel.FK_Jewerly_CategoryID_Category_ID" />
         <AssociationConnector Association="JewelryStoreModel.FK_Check_Client" />
         <AssociationConnector Association="JewelryStoreModel.FK_Check_Jewelry" />

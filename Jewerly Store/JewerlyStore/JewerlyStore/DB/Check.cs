@@ -20,6 +20,7 @@ namespace JewerlyStore.DB
         public System.DateTime Date { get; set; }
         public Nullable<double> Commission { get; set; }
         public double TotalPrice { get; set; }
+        public int Count { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Jewelry Jewelry { get; set; }

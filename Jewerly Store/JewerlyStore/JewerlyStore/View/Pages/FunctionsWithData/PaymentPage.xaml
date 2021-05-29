@@ -29,13 +29,41 @@
                            FontSize="14"/>
             </StackPanel>
             <ComboBox Name="cmbSelectClient"
-                      Width="300"
+                      Width="400"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                       materialDesign:HintAssist.Hint="Выберите клиента"/>
-            <ComboBox Name="cmbSelectJewely"
-                      SelectionChanged="cmbSelectJewely_SelectionChanged"
-                      Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-                      materialDesign:HintAssist.Hint="Выберите изделие"/>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Name="cmbSelectJewely"
+                          Width="280"
+                          SelectionChanged="cmbSelectJewely_SelectionChanged"
+                          Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                          materialDesign:HintAssist.Hint="Выберите изделие"/>
+                
+                <TextBlock Name="txbCount"
+                           Width="30"
+                           FontSize="15"
+                           Text="0"
+                           Margin="10,0,0,0"
+                           VerticalAlignment="Center"/>
+                <Button Content="+"
+                        Click="btnAddCount_Click"
+                        Foreground="White"
+                        Background="Black"/>
+                <Button Content="-"
+                        Foreground="White"
+                        Background="Black"
+                        Click="btnRemoveCount_Click"/>
+            </StackPanel>
+            <StackPanel Name="SimpleComboBox">
+
+            </StackPanel>
+            <Button Content="+"
+                    Height="25"
+                    Width="100"
+                    Foreground="White"
+                    Background="Black"
+                    Margin="0,10,0,0"
+                    Click="btnAddOrder_Click"/>
             <TextBox Name="txbTotalPrice"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      materialDesign:HintAssist.Hint="Итоговая цена"/>

@@ -42,5 +42,10 @@ namespace JewerlyStore.View.Pages
             About about = new About();
             about.ShowDialog();
         }
+
+        private void btnHistory_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new HistoryPage());
+        }
     }
 }

@@ -96,6 +96,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\FunctionsWithData\HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\FunctionsWithData\PaymentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,9 +167,6 @@
     <Compile Include="DB\SignIn.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\sysdiagrams.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="View\Pages\AutorizationPage.xaml.cs">
       <DependentUpon>AutorizationPage.xaml</DependentUpon>
     </Compile>
@@ -180,6 +181,9 @@
     </Compile>
     <Compile Include="View\Pages\FunctionsWithData\GetCheckPage.xaml.cs">
       <DependentUpon>GetCheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\FunctionsWithData\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\FunctionsWithData\PaymentPage.xaml.cs">
       <DependentUpon>PaymentPage.xaml</DependentUpon>

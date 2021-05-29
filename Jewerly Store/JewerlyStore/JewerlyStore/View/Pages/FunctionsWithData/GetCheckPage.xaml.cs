@@ -23,6 +23,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             txbDate.Text = check.Date.ToString();
             txbCommission.Text = check.Commission.ToString();
             txbTotalPrice.Text = check.Jewelry.Price.ToString();
+            txbCount.Text = check.Count.ToString();
         }
 
         private void btnCheckGet_Click(object sender, RoutedEventArgs e)

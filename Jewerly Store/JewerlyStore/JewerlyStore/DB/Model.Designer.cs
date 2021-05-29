@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "A:\github\repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\DB\Model.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\Administrator\Documents\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\DB\Model.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

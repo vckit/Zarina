@@ -17,6 +17,7 @@
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Commission" Type="float" />
     <Property Name="TotalPrice" Type="float" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Client">
     <Key>
@@ -39,6 +40,7 @@
     <Property Name="Material" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Pice" Type="bigint" Nullable="false" />
     <Property Name="ParametersID" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Parameters">
     <Key>
@@ -64,16 +66,6 @@
     <Property Name="LogIn" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="RoleID" Type="nchar" MaxLength="1" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_Check_Client">
     <End Role="Client" Type="Self.Client" Multiplicity="1" />
@@ -143,7 +135,6 @@
     <EntitySet Name="Parameters" EntityType="Self.Parameters" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SignIn" EntityType="Self.SignIn" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Check_Client" Association="Self.FK_Check_Client">
       <End Role="Client" EntitySet="Client" />
       <End Role="Check" EntitySet="Check" />

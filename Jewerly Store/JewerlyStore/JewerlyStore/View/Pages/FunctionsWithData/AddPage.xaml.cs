@@ -49,7 +49,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                 newJewelry.Material = materialTxb.Text;
                 newJewelry.Pice = Convert.ToInt64(priceTxb.Text);
                 newJewelry.ParametersID = newParameteres.ID;
-
+                newJewelry.Count = Convert.ToInt32(txbCount.Text);
                 var jewCategory = ConnectClass.db.Category.FirstOrDefault(item => item.Title == categoryCmb.Text);
                 newJewelry.CategoryID = jewCategory.ID;
 
@@ -62,7 +62,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
 
                 ConnectClass.db.SaveChanges();
 
-                MessageBox.Show("Данные были успешно добавлены!");
+                MessageBox.Show("Данные сохранены.", "Операция прошла успешно!", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService.GoBack();
             }
             catch (Exception ex)
@@ -108,6 +108,11 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
         }
 
         private void weightTxb_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = "0123456789".IndexOf(e.Text) < 0;
+        }
+
+        private void txbCount_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             e.Handled = "0123456789".IndexOf(e.Text) < 0;
         }

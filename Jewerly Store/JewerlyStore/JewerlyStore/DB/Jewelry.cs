@@ -27,6 +27,7 @@ namespace JewerlyStore.DB
         public string Material { get; set; }
         public long Pice { get; set; }
         public int ParametersID { get; set; }
+        public int Count { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
