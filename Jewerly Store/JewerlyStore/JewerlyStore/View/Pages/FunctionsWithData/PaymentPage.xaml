@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Оформление заказа">
+      Title="Оформление покупки">
 
     <Grid>
         <StackPanel VerticalAlignment="Top"
@@ -54,20 +54,11 @@
                         Background="Black"
                         Click="btnRemoveCount_Click"/>
             </StackPanel>
-            <StackPanel Name="SimpleComboBox">
-
-            </StackPanel>
-            <Button Content="+"
-                    Height="25"
-                    Width="100"
-                    Foreground="White"
-                    Background="Black"
-                    Margin="0,10,0,0"
-                    Click="btnAddOrder_Click"/>
+            
             <TextBox Name="txbTotalPrice"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      materialDesign:HintAssist.Hint="Итоговая цена"/>
-            <Button Content="Офорить заказ"
+            <Button Content="Офорить покупку"
                     Foreground="White"
                     Background="Black"
                     Margin="0,5,0,0"

@@ -9,7 +9,7 @@
       d:DesignHeight="600" d:DesignWidth="1000"
       Title="Обновление данных">
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.2*"/>
