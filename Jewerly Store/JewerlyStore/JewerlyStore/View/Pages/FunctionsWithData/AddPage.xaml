@@ -30,6 +30,7 @@
                            Height="200"
                            Margin="0,0,0,20"/>
                     <Button x:Name="openBtn"
+                            materialDesign:ButtonAssist.CornerRadius="5"
                             Content="Выбрать"
                             Background="Black"
                             Foreground="White"
@@ -59,7 +60,6 @@
                                  Width="200"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-
                         <TextBox x:Name="materialTxb"
                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                  materialDesign:HintAssist.Hint="Материал"
@@ -69,6 +69,7 @@
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,0,0,20">
                         <TextBox x:Name="priceTxb"
+                                 Margin="0,10,0,0"
                                  PreviewTextInput="priceTxb_PreviewTextInput"
                                  materialDesign:HintAssist.Hint="Цена"
                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -120,6 +121,7 @@
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
                 <Button x:Name="backBtn"
+                        materialDesign:ButtonAssist.CornerRadius="5"
                         Content="Назад"
                         Background="Black"
                         Foreground="White"
@@ -130,6 +132,7 @@
                         Content="Добавить"
                         Background="Black"
                         Foreground="White"
+                        materialDesign:ButtonAssist.CornerRadius="5"
                         Width="200"
                         Height="35" Click="addBtn_Click"/>
             </StackPanel>

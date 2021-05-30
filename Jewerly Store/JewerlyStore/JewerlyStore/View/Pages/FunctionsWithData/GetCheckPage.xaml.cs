@@ -22,7 +22,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             txbJewName.Text = check.Jewelry.JewelryCheckGet;
             txbDate.Text = check.Date.ToString();
             txbCommission.Text = check.Commission.ToString();
-            txbTotalPrice.Text = check.Jewelry.Price.ToString();
+            txbTotalPrice.Text = check.TotalPrice.ToString();
             txbCount.Text = check.Count.ToString();
         }
 

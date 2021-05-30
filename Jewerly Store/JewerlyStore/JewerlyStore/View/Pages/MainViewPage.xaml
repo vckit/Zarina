@@ -56,6 +56,7 @@
                                     <Label Content="{Binding Parameters.Height}" ContentStringFormat="Высота изделия: {0} см." FontSize="14" Foreground="Black"/>
                                     <Label Content="{Binding Parameters.Width}" ContentStringFormat="Ширина изделия: {0} см." FontSize="14" Foreground="Black"/>
                                     <Label Content="{Binding Parameters.Weight}" ContentStringFormat="Вес изделия: {0} г." FontSize="14" Foreground="Black"/>
+                                    <Label Content="{Binding Count}" ContentStringFormat="Количество: {0} шт." FontSize="14" Foreground="Black"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>
@@ -69,10 +70,11 @@
                         HorizontalAlignment="Left"
                         Margin="20">
                 <Button x:Name="backBtn"
+                        materialDesign:ButtonAssist.CornerRadius="5"
                         Content="Назад"
                         Background="Black"
                         Foreground="White"
-                        Width="120"
+                        Width="150"
                         Height="35" Click="backBtn_Click"/>
             </StackPanel>
             <StackPanel VerticalAlignment="Center"
@@ -82,14 +84,16 @@
                         Content="Удалить"
                         Background="Black"
                         Foreground="White"
-                        Width="120"
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        Width="150"
                         Height="35"
                         Margin="0,0,20,0" Click="removeBtn_Click"/>
                 <Button x:Name="addBtn"
                         Content="Добавить"
                         Background="Black"
                         Foreground="White"
-                        Width="120"
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        Width="150"
                         Height="35" Click="addBtn_Click"/>
             </StackPanel>
             <StackPanel VerticalAlignment="Center"
@@ -99,7 +103,8 @@
                         Content="PDF"
                         Background="Black"
                         Foreground="White"
-                        Width="80"
+                        Width="50"
+                        materialDesign:ButtonAssist.CornerRadius="5"
                         Height="35" Click="pdfBtn_Click"/>
             </StackPanel>
         </Grid>

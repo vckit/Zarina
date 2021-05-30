@@ -89,6 +89,7 @@ namespace JewerlyStore.View.Pages
                 table.Cell(1, 5).Range.Text = "Высота";
                 table.Cell(1, 6).Range.Text = "Ширина";
                 table.Cell(1, 7).Range.Text = "Вес";
+                table.Cell(1, 8).Range.Text = "Количество";
 
                 int i = 2;
                 foreach (var item in jewerlyList)
@@ -101,9 +102,10 @@ namespace JewerlyStore.View.Pages
                     table.Cell(i, 5).Range.Text = item.Parameters.Height;
                     table.Cell(i, 6).Range.Text = item.Parameters.Width;
                     table.Cell(i, 7).Range.Text = item.Parameters.Weight;
+                    table.Cell(i, 7).Range.Text = item.Count.ToString();
                     i++;
                 }
-                document.SaveAs2(@"A:\parts.pdf", Word.WdSaveFormat.wdFormatPDF);
+                document.SaveAs2(@"C:\parts.pdf", Word.WdSaveFormat.wdFormatPDF);
                 document.Close(Word.WdSaveOptions.wdDoNotSaveChanges);
                 word.Quit(Word.WdSaveOptions.wdDoNotSaveChanges);
                 MessageBox.Show("Сохранение прошло успешно!", "Сохранено!", MessageBoxButton.OK, MessageBoxImage.Information);

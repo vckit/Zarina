@@ -38,21 +38,23 @@
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right">
                     <Button x:Name="comeBtn"
-                        Content="Войти"
-                        Width="120"
-                        Height="35"
-                        Background="Black"
-                        Foreground="White" 
-                        Click="comeBtn_Click"
+                            materialDesign:ButtonAssist.CornerRadius="5"
+                            Content="Войти"
+                            Width="120"
+                            Height="35"
+                            Background="Black"
+                            Foreground="White" 
+                            Click="comeBtn_Click"
                             IsDefault="True"/>
                     <Button Content="Отмена"
-                        Background="Black"
-                        Margin="10,0,0,0"
-                        Foreground="White"
-                        Width="120"
-                        Height="35"
-                        Name="btnCancel"
-                        Click="btnCancel_Click"/>
+                            materialDesign:ButtonAssist.CornerRadius="5"
+                            Background="Black"
+                            Margin="10,0,0,0"
+                            Foreground="White"
+                            Width="120"
+                            Height="35"
+                            Name="btnCancel"
+                            Click="btnCancel_Click"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

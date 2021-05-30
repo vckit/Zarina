@@ -26,5 +26,21 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             InitializeComponent();
             ChecksList.ItemsSource = ConnectClass.db.Check.ToList();
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void dtpDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ChecksList.ItemsSource = ConnectClass.db.Check.Where(item => item.Date == dtpDate.SelectedDate).ToList();
+        }
+
+        private void AllCheck_Click(object sender, RoutedEventArgs e)
+        {
+            dtpDate.SelectedDate = null;
+            ChecksList.ItemsSource = ConnectClass.db.Check.ToList();
+        }
     }
 }

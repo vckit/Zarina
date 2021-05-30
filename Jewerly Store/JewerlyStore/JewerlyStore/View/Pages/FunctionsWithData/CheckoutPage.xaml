@@ -41,11 +41,13 @@
                         Width="120"
                         Height="25"
                         FontSize="11"
+                        materialDesign:ButtonAssist.CornerRadius="5"
                     Foreground="White"
                     Background="Black" Click="btnSave_Click"/>
 
                 <Button Content="Назад" 
                         Margin="10,0,0,0"
+                        materialDesign:ButtonAssist.CornerRadius="5"
                     Name="btnCancel"
                         Width="120"
                         Height="25"

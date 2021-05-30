@@ -5,8 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:JewerlyStore.View.Pages.FunctionsWithData"
       mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="HistoryPage">
+      Title="История заказов">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,8 +17,36 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <StackPanel>
-
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Left"
+                        Grid.Column="0"
+                        Orientation="Horizontal">
+                <Button Content="Назад"
+                        Width="100"
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        Foreground="White"
+                        Background="Black"
+                        Margin="5"
+                        Click="btnBack_Click"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal">
+                <DatePicker Name="dtpDate"
+                            Width="200"
+                            Margin="10"
+                            SelectedDateChanged="dtpDate_SelectedDateChanged"
+                            materialDesign:HintAssist.Hint="Выберите дату"
+                            Style="{StaticResource MaterialDesignDatePicker}"/>
+                <Button Content="Сбросить"
+                        Foreground="White"
+                        Background="Black"
+                        BorderBrush="Black"
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        Margin="10,0,0,0"
+                        Click="AllCheck_Click"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
@@ -28,8 +57,10 @@
                             <Label Content="{Binding ID}" ContentStringFormat="ID: {0}"/>
                             <Label Content="{Binding Client.FullName}" ContentStringFormat="ФИО Клиента: {0}"/>
                             <Label Content="{Binding Jewelry.JewelryCheckGet}" ContentStringFormat="Изделие: {0}"/>
-                            <Label Content="{Binding Jewelry.Count}" ContentStringFormat="Количество проданного товара: {0}"/>
+                            <Label Content="{Binding Count}" ContentStringFormat="Количество проданного товара: {0}"/>
                             <Label Content="{Binding Client.Phone}" ContentStringFormat="Телефон: {0}"/>
+                            <Label Content="{Binding Date}" ContentStringFormat="Дата покупки: {0}"/>
+                            <Label Content="{Binding TotalPrice}" ContentStringFormat="Итоговая цена: {0} рублей"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

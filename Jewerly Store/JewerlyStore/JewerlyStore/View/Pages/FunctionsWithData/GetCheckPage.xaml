@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:JewerlyStore.View.Pages.FunctionsWithData"
       mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Получить чек"
       FontSize="15">
@@ -39,7 +40,8 @@
                        Margin="0,10,0,10"/>
                     <TextBlock Name="txbCount" Text="Count"/>
                     <TextBlock Text="Total Price"
-                           Name="txbTotalPrice"/>
+                           Name="txbTotalPrice"
+                               Margin="0,10,0,0"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center"
@@ -47,6 +49,7 @@
                         Margin="20">
                 <Button Content="Печатать чек"
                         Width="200"
+                        materialDesign:ButtonAssist.CornerRadius="10"
                         Foreground="White"
                         Background="Black"
                         Name="btnCheckGet"

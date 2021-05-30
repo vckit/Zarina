@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:JewerlyStore.View.Pages.FunctionsWithData"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1000"
-      Title="Редактирование">
+      Title="Обновление данных">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -30,6 +30,7 @@
                            Height="200"
                            Margin="0,0,0,20"/>
                     <Button x:Name="openBtn"
+                            materialDesign:ButtonAssist.CornerRadius="5"
                             Content="Выбрать"
                             Background="Black"
                             Foreground="White"
@@ -119,6 +120,7 @@
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
                 <Button x:Name="backBtn"
+                        materialDesign:ButtonAssist.CornerRadius="5"
                         Content="Назад"
                         Background="Black"
                         Foreground="White"
@@ -127,6 +129,7 @@
                         Margin="0,0,20,0" Click="backBtn_Click"/>
                 <Button x:Name="editBtn"
                         Content="Изменить"
+                        materialDesign:ButtonAssist.CornerRadius="5"
                         Background="Black"
                         Foreground="White"
                         Width="200"

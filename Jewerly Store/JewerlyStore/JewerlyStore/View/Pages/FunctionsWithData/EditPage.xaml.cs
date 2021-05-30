@@ -46,6 +46,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             heightTxb.Text = selectedItem.Parameters.Height;
             widthTxb.Text = selectedItem.Parameters.Width;
             weightTxb.Text = selectedItem.Parameters.Weight;
+            txbCount.Text = selectedItem.Count.ToString();
         }
 
         //Кнопка назад
