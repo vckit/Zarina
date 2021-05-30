@@ -57,6 +57,8 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             _total = (cmbSelectJewely.SelectedItem as Jewelry).Pice;
             _price = _total;
             txbCount.Visibility = Visibility.Visible;
+            _count = 1;
+            txbCount.Text = _count.ToString();
             txbTotalPrice.Text = _total.ToString();
         }
 
@@ -68,9 +70,16 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
         private void btnAddCount_Click(object sender, RoutedEventArgs e)
         {
             txbCount.Visibility = Visibility.Visible;
-            _count++;
-            _balance = _countJew - _count;
-            _total += _price;
+            if (_countJew == _count)
+            {
+                MessageBox.Show("Вы первысили количество товара, которое имеется в наличии склада.", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+            else
+            {
+                _count++;
+                _balance = _countJew - _count;
+                _total += _price;
+            }
             txbTotalPrice.Text = _total.ToString();
             txbCount.Text = _count.ToString();
         }
