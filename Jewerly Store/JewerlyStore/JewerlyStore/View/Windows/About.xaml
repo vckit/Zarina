@@ -16,13 +16,16 @@
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Copyright ©  2021"
-                           FontSize="21"/>
+                           FontSize="21"
+                           FontWeight="Bold"/>
                 <TextBlock Text="Автор: Ахмедова Зарина"
                            Margin="0,10,0,10"
-                           FontSize="14"/>
+                           FontSize="14"
+                           FontWeight="Bold"/>
                 <TextBlock Text="Программное обеспечение"/>
                 <TextBlock Text="Дипломная работа:"
-                           Margin="0,10,0,10"/>
+                           Margin="0,10,0,10"
+                           FontWeight="Bold"/>
                 <TextBlock Text="ГБПОУ Технический колледж"/>
                 <TextBlock Text="имени Р.Н. Ашуралиева."/>
 
