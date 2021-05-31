@@ -57,9 +57,18 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             _total = (cmbSelectJewely.SelectedItem as Jewelry).Pice;
             _price = _total;
             txbCount.Visibility = Visibility.Visible;
-            _count = 1;
-            txbCount.Text = _count.ToString();
-            txbTotalPrice.Text = _total.ToString();
+            if(_countJew != 0)
+            {
+                _count = 1;
+                txbCount.Text = _count.ToString();
+                txbTotalPrice.Text = _total.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Данного товара нет в наличии.", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                txbCount.Text = "0";
+                txbTotalPrice.Text = "0";
+            } 
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -70,18 +79,26 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
         private void btnAddCount_Click(object sender, RoutedEventArgs e)
         {
             txbCount.Visibility = Visibility.Visible;
-            if (_countJew == _count)
+            if(_countJew != 0)
             {
-                MessageBox.Show("Вы первысили количество товара, которое имеется в наличии склада.", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                if (_countJew == _count)
+                {
+                    MessageBox.Show("Вы первысили количество товара, которое имеется в наличии склада.", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+                else
+                {
+                    _count++;
+                    _balance = _countJew - _count;
+                    _total += _price;
+                    
+                }
+                txbTotalPrice.Text = _total.ToString();
+                txbCount.Text = _count.ToString();
             }
             else
             {
-                _count++;
-                _balance = _countJew - _count;
-                _total += _price;
+                MessageBox.Show("Вы первысили количество товара, которое имеется в наличии склада.", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
-            txbTotalPrice.Text = _total.ToString();
-            txbCount.Text = _count.ToString();
         }
 
         private void btnRemoveCount_Click(object sender, RoutedEventArgs e)
