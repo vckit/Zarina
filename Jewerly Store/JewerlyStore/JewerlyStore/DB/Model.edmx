@@ -56,6 +56,19 @@
           <Property Name="Width" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Weight" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <EntityType Name="Regisration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
+          <Property Name="NumberContract" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="IDUser" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="ID" />
@@ -120,6 +133,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Regisration_SignIn">
+          <End Role="SignIn" Type="Self.SignIn" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Regisration" Type="Self.Regisration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SignIn">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Regisration">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_SignIn_RoleID_Role_ID">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="SignIn" Type="Self.SignIn" Multiplicity="*" />
@@ -138,6 +165,7 @@
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jewelry" EntityType="Self.Jewelry" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parameters" EntityType="Self.Parameters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Regisration" EntityType="Self.Regisration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SignIn" EntityType="Self.SignIn" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Check_Client" Association="Self.FK_Check_Client">
@@ -155,6 +183,10 @@
           <AssociationSet Name="FK_Jewerly_ParametersID_Parameters_ID" Association="Self.FK_Jewerly_ParametersID_Parameters_ID">
             <End Role="Parameters" EntitySet="Parameters" />
             <End Role="Jewelry" EntitySet="Jewelry" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Regisration_SignIn" Association="Self.FK_Regisration_SignIn">
+            <End Role="SignIn" EntitySet="SignIn" />
+            <End Role="Regisration" EntitySet="Regisration" />
           </AssociationSet>
           <AssociationSet Name="FK_SignIn_RoleID_Role_ID" Association="Self.FK_SignIn_RoleID_Role_ID">
             <End Role="Role" EntitySet="Role" />
@@ -192,6 +224,11 @@
           <AssociationSet Name="FK_SignIn_RoleID_Role_ID" Association="JewelryStoreModel.FK_SignIn_RoleID_Role_ID">
             <End Role="Role" EntitySet="Role" />
             <End Role="SignIn" EntitySet="SignIn" />
+          </AssociationSet>
+          <EntitySet Name="Regisration" EntityType="JewelryStoreModel.Regisration" />
+          <AssociationSet Name="FK_Regisration_SignIn" Association="JewelryStoreModel.FK_Regisration_SignIn">
+            <End Role="SignIn" EntitySet="SignIn" />
+            <End Role="Regisration" EntitySet="Regisration" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Category">
@@ -270,6 +307,7 @@
           <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="RoleID" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Role" Relationship="JewelryStoreModel.FK_SignIn_RoleID_Role_ID" FromRole="SignIn" ToRole="Role" />
+          <NavigationProperty Name="Regisration" Relationship="JewelryStoreModel.FK_Regisration_SignIn" FromRole="SignIn" ToRole="Regisration" />
         </EntityType>
         <Association Name="FK_Jewerly_CategoryID_Category_ID">
           <End Type="JewelryStoreModel.Category" Role="Category" Multiplicity="1" />
@@ -328,6 +366,34 @@
             </Principal>
             <Dependent Role="SignIn">
               <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Regisration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NumberContract" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SignIn" Relationship="JewelryStoreModel.FK_Regisration_SignIn" FromRole="Regisration" ToRole="SignIn" />
+        </EntityType>
+        <Association Name="FK_Regisration_SignIn">
+          <End Type="JewelryStoreModel.SignIn" Role="SignIn" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="JewelryStoreModel.Regisration" Role="Regisration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SignIn">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Regisration">
+              <PropertyRef Name="IDUser" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -407,6 +473,20 @@
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="LogIn" ColumnName="LogIn" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regisration">
+            <EntityTypeMapping TypeName="JewelryStoreModel.Regisration">
+              <MappingFragment StoreEntitySet="Regisration">
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="NumberContract" ColumnName="NumberContract" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

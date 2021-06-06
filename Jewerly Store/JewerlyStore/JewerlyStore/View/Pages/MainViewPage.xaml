@@ -100,10 +100,10 @@
                         HorizontalAlignment="Right"
                         Margin="20">
                 <Button x:Name="pdfBtn"
-                        Content="PDF"
+                        Content="Вывести"
                         Background="Black"
                         Foreground="White"
-                        Width="50"
+                        Width="150"
                         materialDesign:ButtonAssist.CornerRadius="5"
                         Height="35" Click="pdfBtn_Click"/>
             </StackPanel>

@@ -28,6 +28,11 @@
       <End Role="Role" EntitySet="Role" />
       <End Role="SignIn" EntitySet="SignIn" />
     </AssociationSet>
+    <EntitySet Name="Regisration" EntityType="JewelryStoreModel.Regisration" />
+    <AssociationSet Name="FK_Regisration_SignIn" Association="JewelryStoreModel.FK_Regisration_SignIn">
+      <End Role="SignIn" EntitySet="SignIn" />
+      <End Role="Regisration" EntitySet="Regisration" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Category">
     <Key>
@@ -105,6 +110,7 @@
     <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="RoleID" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Role" Relationship="JewelryStoreModel.FK_SignIn_RoleID_Role_ID" FromRole="SignIn" ToRole="Role" />
+    <NavigationProperty Name="Regisration" Relationship="JewelryStoreModel.FK_Regisration_SignIn" FromRole="SignIn" ToRole="Regisration" />
   </EntityType>
   <Association Name="FK_Jewerly_CategoryID_Category_ID">
     <End Type="JewelryStoreModel.Category" Role="Category" Multiplicity="1" />
@@ -163,6 +169,34 @@
       </Principal>
       <Dependent Role="SignIn">
         <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Regisration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumberContract" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IDUser" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SignIn" Relationship="JewelryStoreModel.FK_Regisration_SignIn" FromRole="Regisration" ToRole="SignIn" />
+  </EntityType>
+  <Association Name="FK_Regisration_SignIn">
+    <End Type="JewelryStoreModel.SignIn" Role="SignIn" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="JewelryStoreModel.Regisration" Role="Regisration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SignIn">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Regisration">
+        <PropertyRef Name="IDUser" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

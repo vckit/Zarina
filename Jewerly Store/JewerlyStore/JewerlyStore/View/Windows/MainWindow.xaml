@@ -6,8 +6,23 @@
         xmlns:local="clr-namespace:JewerlyStore"
         mc:Ignorable="d" Loaded="Window_Loaded"
         WindowStartupLocation="CenterScreen"
+        FontSize="18"
+        Icon="/Resources/store.ico"
         Title="{Binding ElementName=mainFrame, Path=Content.Title}" Height="600" Width="1080">
     <Grid>
-        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+            <TextBlock x:Name="txbDate"
+                       Margin="5,0,5,0"/>
+            <TextBlock Name="txbTime"/>
+        </StackPanel>
+        
+        <Frame x:Name="mainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

@@ -17,6 +17,8 @@
         <AssociationConnector Association="JewelryStoreModel.FK_Check_Jewelry" />
         <AssociationConnector Association="JewelryStoreModel.FK_Jewerly_ParametersID_Parameters_ID" />
         <AssociationConnector Association="JewelryStoreModel.FK_SignIn_RoleID_Role_ID" />
+        <EntityTypeShape EntityType="JewelryStoreModel.Regisration" Width="1.5" PointX="7.375" PointY="0.75" />
+        <AssociationConnector Association="JewelryStoreModel.FK_Regisration_SignIn" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

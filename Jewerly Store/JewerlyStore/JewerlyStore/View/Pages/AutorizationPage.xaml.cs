@@ -55,5 +55,10 @@ namespace JewerlyStore.View.Pages
         {
             Application.Current.Shutdown();
         }
+
+        private void btnRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RegistrationPageView());
+        }
     }
 }

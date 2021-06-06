@@ -56,6 +56,14 @@
                             Name="btnCancel"
                             Click="btnCancel_Click"/>
                 </StackPanel>
+                <StackPanel>
+                    <Button Foreground="White"
+                            Background="Black"
+                            materialDesign:ButtonAssist.CornerRadius="10"
+                            Content="Регистрация"
+                            Margin="0,5,0,0"
+                            Click="btnRegistration_Click"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
 
