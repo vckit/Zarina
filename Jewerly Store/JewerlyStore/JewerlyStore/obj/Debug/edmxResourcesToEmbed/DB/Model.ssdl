@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Хранилище JewelryStoreModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Basket">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDCheck" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="ID" />
@@ -80,6 +87,18 @@
     <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="RoleID" Type="nchar" MaxLength="1" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Basket_Check">
+    <End Role="Check" Type="Self.Check" Multiplicity="1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Check">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Check_Client">
     <End Role="Client" Type="Self.Client" Multiplicity="1" />
     <End Role="Check" Type="Self.Check" Multiplicity="*" />
@@ -155,6 +174,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Хранилище JewelryStoreModelContainer">
+    <EntitySet Name="Basket" EntityType="Self.Basket" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Check" EntityType="Self.Check" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
@@ -163,6 +183,10 @@
     <EntitySet Name="Regisration" EntityType="Self.Regisration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SignIn" EntityType="Self.SignIn" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Basket_Check" Association="Self.FK_Basket_Check">
+      <End Role="Check" EntitySet="Check" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
     <AssociationSet Name="FK_Check_Client" Association="Self.FK_Check_Client">
       <End Role="Client" EntitySet="Client" />
       <End Role="Check" EntitySet="Check" />

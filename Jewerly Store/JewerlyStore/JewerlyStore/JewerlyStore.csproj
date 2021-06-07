@@ -112,6 +112,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\FunctionsWithData\BasketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\FunctionsWithData\CheckoutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -165,6 +169,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\ConnectClass.cs" />
+    <Compile Include="DB\Basket.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\Category.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -212,6 +219,9 @@
     </Compile>
     <Compile Include="View\Pages\FunctionsWithData\AddPage.xaml.cs">
       <DependentUpon>AddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\FunctionsWithData\BasketPage.xaml.cs">
+      <DependentUpon>BasketPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\FunctionsWithData\CheckoutPage.xaml.cs">
       <DependentUpon>CheckoutPage.xaml</DependentUpon>

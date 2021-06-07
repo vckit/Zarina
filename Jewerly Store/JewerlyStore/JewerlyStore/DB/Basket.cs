@@ -12,18 +12,11 @@ namespace JewerlyStore.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Check
+    public partial class Basket
     {
         public int ID { get; set; }
-        public int IDClient { get; set; }
-        public int IDJewelry { get; set; }
-        public System.DateTime Date { get; set; }
-        public Nullable<double> Commission { get; set; }
-        public double TotalPrice { get; set; }
-        public int Count { get; set; }
+        public int IDCheck { get; set; }
     
-        public virtual Basket Basket { get; set; }
-        public virtual Client Client { get; set; }
-        public virtual Jewelry Jewelry { get; set; }
+        public virtual Check Check { get; set; }
     }
 }

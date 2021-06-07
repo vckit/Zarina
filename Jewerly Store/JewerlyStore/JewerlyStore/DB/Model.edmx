@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище JewelryStoreModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCheck" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID" />
@@ -85,6 +92,18 @@
           <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="RoleID" Type="nchar" MaxLength="1" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Basket_Check">
+          <End Role="Check" Type="Self.Check" Multiplicity="1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Check">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Check_Client">
           <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="Check" Type="Self.Check" Multiplicity="*" />
@@ -160,6 +179,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище JewelryStoreModelContainer">
+          <EntitySet Name="Basket" EntityType="Self.Basket" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Check" EntityType="Self.Check" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
@@ -168,6 +188,10 @@
           <EntitySet Name="Regisration" EntityType="Self.Regisration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SignIn" EntityType="Self.SignIn" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Basket_Check" Association="Self.FK_Basket_Check">
+            <End Role="Check" EntitySet="Check" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
           <AssociationSet Name="FK_Check_Client" Association="Self.FK_Check_Client">
             <End Role="Client" EntitySet="Client" />
             <End Role="Check" EntitySet="Check" />
@@ -198,13 +222,19 @@
     <edmx:ConceptualModels>
       <Schema Namespace="JewelryStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="JewelryStoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Basket" EntityType="JewelryStoreModel.Basket" />
           <EntitySet Name="Category" EntityType="JewelryStoreModel.Category" />
           <EntitySet Name="Check" EntityType="JewelryStoreModel.Check" />
           <EntitySet Name="Client" EntityType="JewelryStoreModel.Client" />
           <EntitySet Name="Jewelry" EntityType="JewelryStoreModel.Jewelry" />
           <EntitySet Name="Parameters" EntityType="JewelryStoreModel.Parameters" />
+          <EntitySet Name="Regisration" EntityType="JewelryStoreModel.Regisration" />
           <EntitySet Name="Role" EntityType="JewelryStoreModel.Role" />
           <EntitySet Name="SignIn" EntityType="JewelryStoreModel.SignIn" />
+          <AssociationSet Name="FK_Basket_Check" Association="JewelryStoreModel.FK_Basket_Check">
+            <End Role="Check" EntitySet="Check" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
           <AssociationSet Name="FK_Jewerly_CategoryID_Category_ID" Association="JewelryStoreModel.FK_Jewerly_CategoryID_Category_ID">
             <End Role="Category" EntitySet="Category" />
             <End Role="Jewelry" EntitySet="Jewelry" />
@@ -221,16 +251,23 @@
             <End Role="Parameters" EntitySet="Parameters" />
             <End Role="Jewelry" EntitySet="Jewelry" />
           </AssociationSet>
-          <AssociationSet Name="FK_SignIn_RoleID_Role_ID" Association="JewelryStoreModel.FK_SignIn_RoleID_Role_ID">
-            <End Role="Role" EntitySet="Role" />
-            <End Role="SignIn" EntitySet="SignIn" />
-          </AssociationSet>
-          <EntitySet Name="Regisration" EntityType="JewelryStoreModel.Regisration" />
           <AssociationSet Name="FK_Regisration_SignIn" Association="JewelryStoreModel.FK_Regisration_SignIn">
             <End Role="SignIn" EntitySet="SignIn" />
             <End Role="Regisration" EntitySet="Regisration" />
           </AssociationSet>
+          <AssociationSet Name="FK_SignIn_RoleID_Role_ID" Association="JewelryStoreModel.FK_SignIn_RoleID_Role_ID">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="SignIn" EntitySet="SignIn" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCheck" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Check" Relationship="JewelryStoreModel.FK_Basket_Check" FromRole="Basket" ToRole="Check" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID" />
@@ -249,9 +286,10 @@
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Commission" Type="Double" />
           <Property Name="TotalPrice" Type="Double" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Basket" Relationship="JewelryStoreModel.FK_Basket_Check" FromRole="Check" ToRole="Basket" />
           <NavigationProperty Name="Client" Relationship="JewelryStoreModel.FK_Check_Client" FromRole="Check" ToRole="Client" />
           <NavigationProperty Name="Jewelry" Relationship="JewelryStoreModel.FK_Check_Jewelry" FromRole="Check" ToRole="Jewelry" />
-          <Property Name="Count" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -290,6 +328,20 @@
           <Property Name="Weight" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Jewelry" Relationship="JewelryStoreModel.FK_Jewerly_ParametersID_Parameters_ID" FromRole="Parameters" ToRole="Jewelry" />
         </EntityType>
+        <EntityType Name="Regisration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NumberContract" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SignIn" Relationship="JewelryStoreModel.FK_Regisration_SignIn" FromRole="Regisration" ToRole="SignIn" />
+        </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="ID" />
@@ -306,9 +358,21 @@
           <Property Name="LogIn" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="RoleID" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Role" Relationship="JewelryStoreModel.FK_SignIn_RoleID_Role_ID" FromRole="SignIn" ToRole="Role" />
           <NavigationProperty Name="Regisration" Relationship="JewelryStoreModel.FK_Regisration_SignIn" FromRole="SignIn" ToRole="Regisration" />
+          <NavigationProperty Name="Role" Relationship="JewelryStoreModel.FK_SignIn_RoleID_Role_ID" FromRole="SignIn" ToRole="Role" />
         </EntityType>
+        <Association Name="FK_Basket_Check">
+          <End Type="JewelryStoreModel.Check" Role="Check" Multiplicity="1" />
+          <End Type="JewelryStoreModel.Basket" Role="Basket" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Check">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Jewerly_CategoryID_Category_ID">
           <End Type="JewelryStoreModel.Category" Role="Category" Multiplicity="1" />
           <End Type="JewelryStoreModel.Jewelry" Role="Jewelry" Multiplicity="*" />
@@ -357,32 +421,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SignIn_RoleID_Role_ID">
-          <End Type="JewelryStoreModel.Role" Role="Role" Multiplicity="1" />
-          <End Type="JewelryStoreModel.SignIn" Role="SignIn" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="SignIn">
-              <PropertyRef Name="RoleID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Regisration">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NumberContract" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="IDUser" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="SignIn" Relationship="JewelryStoreModel.FK_Regisration_SignIn" FromRole="Regisration" ToRole="SignIn" />
-        </EntityType>
         <Association Name="FK_Regisration_SignIn">
           <End Type="JewelryStoreModel.SignIn" Role="SignIn" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -397,12 +435,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SignIn_RoleID_Role_ID">
+          <End Type="JewelryStoreModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="JewelryStoreModel.SignIn" Role="SignIn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SignIn">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище JewelryStoreModelContainer" CdmEntityContainer="JewelryStoreEntities">
+          <EntitySetMapping Name="Basket">
+            <EntityTypeMapping TypeName="JewelryStoreModel.Basket">
+              <MappingFragment StoreEntitySet="Basket">
+                <ScalarProperty Name="IDCheck" ColumnName="IDCheck" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Category">
             <EntityTypeMapping TypeName="JewelryStoreModel.Category">
               <MappingFragment StoreEntitySet="Category">
@@ -459,6 +517,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Regisration">
+            <EntityTypeMapping TypeName="JewelryStoreModel.Regisration">
+              <MappingFragment StoreEntitySet="Regisration">
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="NumberContract" ColumnName="NumberContract" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="JewelryStoreModel.Role">
               <MappingFragment StoreEntitySet="Role">
@@ -473,20 +545,6 @@
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="LogIn" ColumnName="LogIn" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Regisration">
-            <EntityTypeMapping TypeName="JewelryStoreModel.Regisration">
-              <MappingFragment StoreEntitySet="Regisration">
-                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="NumberContract" ColumnName="NumberContract" />
-                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище JewelryStoreModelContainer" CdmEntityContainer="JewelryStoreEntities">
+    <EntitySetMapping Name="Basket">
+      <EntityTypeMapping TypeName="JewelryStoreModel.Basket">
+        <MappingFragment StoreEntitySet="Basket">
+          <ScalarProperty Name="IDCheck" ColumnName="IDCheck" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Category">
       <EntityTypeMapping TypeName="JewelryStoreModel.Category">
         <MappingFragment StoreEntitySet="Category">
@@ -57,6 +65,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Regisration">
+      <EntityTypeMapping TypeName="JewelryStoreModel.Regisration">
+        <MappingFragment StoreEntitySet="Regisration">
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="NumberContract" ColumnName="NumberContract" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Role">
       <EntityTypeMapping TypeName="JewelryStoreModel.Role">
         <MappingFragment StoreEntitySet="Role">
@@ -71,20 +93,6 @@
           <ScalarProperty Name="RoleID" ColumnName="RoleID" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="LogIn" ColumnName="LogIn" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Regisration">
-      <EntityTypeMapping TypeName="JewelryStoreModel.Regisration">
-        <MappingFragment StoreEntitySet="Regisration">
-          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="NumberContract" ColumnName="NumberContract" />
-          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

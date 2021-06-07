@@ -33,7 +33,6 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             try
             {
                 Check check = new Check();
-
                 check.IDClient = (cmbSelectClient.SelectedItem as Client).ID;
                 check.IDJewelry = (cmbSelectJewely.SelectedItem as Jewelry).ID;
                 check.Date = DateTime.Now;
@@ -43,7 +42,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                 var selectedCount = ConnectClass.db.Jewelry.FirstOrDefault(item => item.ID == check.IDJewelry);
                 selectedCount.Count = _balance;
                 ConnectClass.db.SaveChanges();
-                NavigationService.Navigate(new OrderDone(check));
+                NavigationService.Navigate(new BasketPage(check));
             }
             catch (Exception ex)
             {
