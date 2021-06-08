@@ -17,6 +17,6 @@ namespace JewerlyStore.DB
         public int ID { get; set; }
         public int IDCheck { get; set; }
     
-        public virtual Check Check { get; set; }
+        public virtual Check Check1 { get; set; }
     }
 }

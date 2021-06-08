@@ -14,6 +14,12 @@ namespace JewerlyStore.DB
     
     public partial class Check
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Check()
+        {
+            this.Basket1 = new HashSet<Basket>();
+        }
+    
         public int ID { get; set; }
         public int IDClient { get; set; }
         public int IDJewelry { get; set; }
@@ -22,8 +28,9 @@ namespace JewerlyStore.DB
         public double TotalPrice { get; set; }
         public int Count { get; set; }
     
-        public virtual Basket Basket { get; set; }
         public virtual Client Client { get; set; }
         public virtual Jewelry Jewelry { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Basket> Basket1 { get; set; }
     }
 }

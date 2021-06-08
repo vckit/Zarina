@@ -87,15 +87,15 @@
     <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="RoleID" Type="nchar" MaxLength="1" Nullable="false" />
   </EntityType>
-  <Association Name="FK_Basket_Check">
+  <Association Name="FK_Basket_Check1">
     <End Role="Check" Type="Self.Check" Multiplicity="1" />
-    <End Role="Basket" Type="Self.Basket" Multiplicity="0..1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Check">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Basket">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="IDCheck" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -183,7 +183,7 @@
     <EntitySet Name="Regisration" EntityType="Self.Regisration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SignIn" EntityType="Self.SignIn" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Basket_Check" Association="Self.FK_Basket_Check">
+    <AssociationSet Name="FK_Basket_Check1" Association="Self.FK_Basket_Check1">
       <End Role="Check" EntitySet="Check" />
       <End Role="Basket" EntitySet="Basket" />
     </AssociationSet>
