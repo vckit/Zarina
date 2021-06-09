@@ -22,8 +22,8 @@ namespace JewerlyStore.View.Pages.PlaceHolder
     /// </summary>
     public partial class OrderDone : Page
     {
-        private Check check;
-        public OrderDone(Check check)
+        private Basket check;
+        public OrderDone(Basket check)
         {
             InitializeComponent();
             this.check = check;

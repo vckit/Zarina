@@ -28,11 +28,12 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             cmbSelectJewely.DisplayMemberPath = "JewelryGet";
         }
 
+        Check check = new Check();
+        Basket basket = new Basket();
         private void btnOrderDone_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Check check = new Check();
                 check.IDClient = (cmbSelectClient.SelectedItem as Client).ID;
                 check.IDJewelry = (cmbSelectJewely.SelectedItem as Jewelry).ID;
                 check.Date = DateTime.Now;
@@ -41,8 +42,13 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                 ConnectClass.db.Check.Add(check);
                 var selectedCount = ConnectClass.db.Jewelry.FirstOrDefault(item => item.ID == check.IDJewelry);
                 selectedCount.Count = _balance;
+                basket.IDCheck = check.ID;
+                ConnectClass.db.Basket.Add(basket);
                 ConnectClass.db.SaveChanges();
-                NavigationService.Navigate(new BasketPage(check));
+                if (MessageBox.Show("Товар добавлен, хотите продолжить оформление?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    NavigationService.Navigate(new BasketPage(check));
+                }
             }
             catch (Exception ex)
             {
@@ -56,7 +62,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             _total = (cmbSelectJewely.SelectedItem as Jewelry).Pice;
             _price = _total;
             txbCount.Visibility = Visibility.Visible;
-            if(_countJew != 0)
+            if (_countJew != 0)
             {
                 _count = 1;
                 txbCount.Text = _count.ToString();
@@ -67,7 +73,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                 MessageBox.Show("Данного товара нет в наличии.", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 txbCount.Text = "0";
                 txbTotalPrice.Text = "0";
-            } 
+            }
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -78,7 +84,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
         private void btnAddCount_Click(object sender, RoutedEventArgs e)
         {
             txbCount.Visibility = Visibility.Visible;
-            if(_countJew != 0)
+            if (_countJew != 0)
             {
                 if (_countJew == _count)
                 {
@@ -89,7 +95,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                     _count++;
                     _balance = _countJew - _count;
                     _total += _price;
-                    
+
                 }
                 txbTotalPrice.Text = _total.ToString();
                 txbCount.Text = _count.ToString();

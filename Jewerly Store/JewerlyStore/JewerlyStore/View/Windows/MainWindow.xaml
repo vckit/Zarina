@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:JewerlyStore"
         mc:Ignorable="d" Loaded="Window_Loaded"
         WindowStartupLocation="CenterScreen"
-        FontSize="18"
+        FontSize="18" MinHeight="600" MinWidth="1080"
         Icon="/Resources/store.ico"
         Title="{Binding ElementName=mainFrame, Path=Content.Title}" Height="600" Width="1080">
     <Grid>

@@ -88,7 +88,9 @@
     <Property Name="RoleID" Type="nchar" MaxLength="1" Nullable="false" />
   </EntityType>
   <Association Name="FK_Basket_Check1">
-    <End Role="Check" Type="Self.Check" Multiplicity="1" />
+    <End Role="Check" Type="Self.Check" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Check">
@@ -100,7 +102,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Check_Client">
-    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Check" Type="Self.Check" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Client">

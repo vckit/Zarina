@@ -13,17 +13,17 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
     /// </summary>
     public partial class GetCheckPage : Page
     {
-        private Check Check;
-        public GetCheckPage(Check check)
+        private Basket Check;
+        public GetCheckPage(Basket check)
         {
             InitializeComponent();
             this.Check = check;
-            txbFioClient.Text = check.Client.FullName;
-            txbJewName.Text = check.Jewelry.JewelryCheckGet;
-            txbDate.Text = check.Date.ToString();
-            txbCommission.Text = check.Commission.ToString();
-            txbTotalPrice.Text = check.TotalPrice.ToString();
-            txbCount.Text = check.Count.ToString();
+            txbFioClient.Text = check.Check1.Client.FullName;
+            txbJewName.Text = check.Check1.Jewelry.JewelryCheckGet;
+            txbDate.Text = check.Check1.Date.ToString();
+            txbCommission.Text = check.Check1.Commission.ToString();
+            txbTotalPrice.Text = check.Check1.TotalPrice.ToString();
+            txbCount.Text = check.Check1.Count.ToString();
         }
 
         private void btnCheckGet_Click(object sender, RoutedEventArgs e)
