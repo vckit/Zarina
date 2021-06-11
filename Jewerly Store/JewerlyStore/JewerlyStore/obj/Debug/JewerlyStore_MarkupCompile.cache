@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-A:\my-repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\
+C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\
 JewerlyStore
 none
 false
 DEBUG;TRACE
-A:\my-repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\App.xaml
+C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\App.xaml
 151203520976
 2599935762
 35-132352206
-31-784861394
+311252035412
 View\Pages\AutorizationPage.xaml;View\Pages\FunctionsWithData\AddPage.xaml;View\Pages\FunctionsWithData\BasketPage.xaml;View\Pages\FunctionsWithData\CheckoutPage.xaml;View\Pages\FunctionsWithData\EditPage.xaml;View\Pages\FunctionsWithData\GetCheckPage.xaml;View\Pages\FunctionsWithData\HistoryPage.xaml;View\Pages\FunctionsWithData\PaymentPage.xaml;View\Pages\MainViewPage.xaml;View\Pages\MenuPage.xaml;View\Pages\PlaceHolder\OrderDone.xaml;View\Pages\RegistrationPageView.xaml;View\Windows\About.xaml;View\Windows\ExportWindow.xaml;View\Windows\MainWindow.xaml;
 
 False

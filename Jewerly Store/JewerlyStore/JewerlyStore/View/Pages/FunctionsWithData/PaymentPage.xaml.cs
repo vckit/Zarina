@@ -28,27 +28,31 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             cmbSelectJewely.DisplayMemberPath = "JewelryGet";
         }
 
-        Check check = new Check();
-        Basket basket = new Basket();
+        private int _idClient;
+        private int _idJewelry;
+
         private void btnOrderDone_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                check.IDClient = (cmbSelectClient.SelectedItem as Client).ID;
-                check.IDJewelry = (cmbSelectJewely.SelectedItem as Jewelry).ID;
+                Check check = new Check();
+                Basket basket = new Basket();
+                _idClient = (cmbSelectClient.SelectedItem as Client).ID;
+                _idJewelry = (cmbSelectJewely.SelectedItem as Jewelry).ID;
+                check.IDClient = _idClient;
+                check.IDJewelry = _idJewelry;
                 check.Date = DateTime.Now;
                 check.TotalPrice = _total;
                 check.Count = _count;
                 ConnectClass.db.Check.Add(check);
                 var selectedCount = ConnectClass.db.Jewelry.FirstOrDefault(item => item.ID == check.IDJewelry);
                 selectedCount.Count = _balance;
-                basket.IDCheck = check.ID;
+                basket.IDClient = _idClient;
+                basket.IDJewelry = _idJewelry;
                 ConnectClass.db.Basket.Add(basket);
+                ;
                 ConnectClass.db.SaveChanges();
-                if (MessageBox.Show("Товар добавлен, хотите продолжить оформление?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-                {
-                    NavigationService.Navigate(new BasketPage(check));
-                }
+                basketRefresh();
             }
             catch (Exception ex)
             {
@@ -106,6 +110,10 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             }
         }
 
+        private void basketRefresh()
+        {
+            BasketList.ItemsSource = ConnectClass.db.Basket.Where(item => item.IDClient == _idClient).ToList();
+        }
         private void btnRemoveCount_Click(object sender, RoutedEventArgs e)
         {
             if (_count != 0)

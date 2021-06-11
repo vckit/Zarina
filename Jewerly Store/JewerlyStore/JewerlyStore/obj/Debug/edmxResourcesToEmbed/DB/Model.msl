@@ -4,7 +4,8 @@
     <EntitySetMapping Name="Basket">
       <EntityTypeMapping TypeName="JewelryStoreModel.Basket">
         <MappingFragment StoreEntitySet="Basket">
-          <ScalarProperty Name="IDCheck" ColumnName="IDCheck" />
+          <ScalarProperty Name="IDJewelry" ColumnName="IDJewelry" />
+          <ScalarProperty Name="IDClient" ColumnName="IDClient" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

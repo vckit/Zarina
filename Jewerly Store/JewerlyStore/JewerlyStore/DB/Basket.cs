@@ -15,8 +15,10 @@ namespace JewerlyStore.DB
     public partial class Basket
     {
         public int ID { get; set; }
-        public int IDCheck { get; set; }
+        public int IDClient { get; set; }
+        public int IDJewelry { get; set; }
     
-        public virtual Check Check1 { get; set; }
+        public virtual Client Client { get; set; }
+        public virtual Jewelry Jewelry { get; set; }
     }
 }

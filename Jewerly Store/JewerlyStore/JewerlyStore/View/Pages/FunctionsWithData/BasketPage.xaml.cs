@@ -16,7 +16,6 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
         {
             InitializeComponent();
             this.check = check;
-            BasketList.ItemsSource = ConnectClass.db.Basket.Where(item => item.IDCheck == check.ID).ToList();
         }
 
         private void btnBack_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -42,7 +41,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
 
         private void btnPayment_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            NavigationService.Navigate(new GetCheckPage(BasketList.SelectedItem as Basket));
+         
         }
     }
 }

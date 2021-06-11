@@ -10,7 +10,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDCheck" Type="int" Nullable="false" />
+          <Property Name="IDClient" Type="int" Nullable="false" />
+          <Property Name="IDJewelry" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -92,24 +93,32 @@
           <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="RoleID" Type="nchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Basket_Check1">
-          <End Role="Check" Type="Self.Check" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+        <Association Name="FK_Basket_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Check">
+            <Principal Role="Client">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Basket">
-              <PropertyRef Name="IDCheck" />
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket_Jewelry">
+          <End Role="Jewelry" Type="Self.Jewelry" Multiplicity="1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jewelry">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="IDJewelry" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Check_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="Check" Type="Self.Check" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Client">
@@ -192,8 +201,12 @@
           <EntitySet Name="Regisration" EntityType="Self.Regisration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SignIn" EntityType="Self.SignIn" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Basket_Check1" Association="Self.FK_Basket_Check1">
-            <End Role="Check" EntitySet="Check" />
+          <AssociationSet Name="FK_Basket_Client" Association="Self.FK_Basket_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_Jewelry" Association="Self.FK_Basket_Jewelry">
+            <End Role="Jewelry" EntitySet="Jewelry" />
             <End Role="Basket" EntitySet="Basket" />
           </AssociationSet>
           <AssociationSet Name="FK_Check_Client" Association="Self.FK_Check_Client">
@@ -235,6 +248,14 @@
           <EntitySet Name="Regisration" EntityType="JewelryStoreModel.Regisration" />
           <EntitySet Name="Role" EntityType="JewelryStoreModel.Role" />
           <EntitySet Name="SignIn" EntityType="JewelryStoreModel.SignIn" />
+          <AssociationSet Name="FK_Basket_Client" Association="JewelryStoreModel.FK_Basket_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_Jewelry" Association="JewelryStoreModel.FK_Basket_Jewelry">
+            <End Role="Jewelry" EntitySet="Jewelry" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
           <AssociationSet Name="FK_Jewerly_CategoryID_Category_ID" Association="JewelryStoreModel.FK_Jewerly_CategoryID_Category_ID">
             <End Role="Category" EntitySet="Category" />
             <End Role="Jewelry" EntitySet="Jewelry" />
@@ -259,18 +280,16 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="SignIn" EntitySet="SignIn" />
           </AssociationSet>
-          <AssociationSet Name="FK_Basket_Check1" Association="JewelryStoreModel.FK_Basket_Check1">
-            <End Role="Check" EntitySet="Check" />
-            <End Role="Basket" EntitySet="Basket" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Basket">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDCheck" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Check1" Relationship="JewelryStoreModel.FK_Basket_Check1" FromRole="Basket" ToRole="Check" />
+          <Property Name="IDClient" Type="Int32" Nullable="false" />
+          <Property Name="IDJewelry" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="JewelryStoreModel.FK_Basket_Client" FromRole="Basket" ToRole="Client" />
+          <NavigationProperty Name="Jewelry" Relationship="JewelryStoreModel.FK_Basket_Jewelry" FromRole="Basket" ToRole="Jewelry" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -293,7 +312,6 @@
           <Property Name="Count" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Client" Relationship="JewelryStoreModel.FK_Check_Client" FromRole="Check" ToRole="Client" />
           <NavigationProperty Name="Jewelry" Relationship="JewelryStoreModel.FK_Check_Jewelry" FromRole="Check" ToRole="Jewelry" />
-          <NavigationProperty Name="Basket1" Relationship="JewelryStoreModel.FK_Basket_Check1" FromRole="Check" ToRole="Basket" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -304,6 +322,7 @@
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SecondName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Basket" Relationship="JewelryStoreModel.FK_Basket_Client" FromRole="Client" ToRole="Basket" />
           <NavigationProperty Name="Check" Relationship="JewelryStoreModel.FK_Check_Client" FromRole="Client" ToRole="Check" />
         </EntityType>
         <EntityType Name="Jewelry">
@@ -318,6 +337,7 @@
           <Property Name="Pice" Type="Int64" Nullable="false" />
           <Property Name="ParametersID" Type="Int32" Nullable="false" />
           <Property Name="Count" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Basket" Relationship="JewelryStoreModel.FK_Basket_Jewelry" FromRole="Jewelry" ToRole="Basket" />
           <NavigationProperty Name="Category" Relationship="JewelryStoreModel.FK_Jewerly_CategoryID_Category_ID" FromRole="Jewelry" ToRole="Category" />
           <NavigationProperty Name="Check" Relationship="JewelryStoreModel.FK_Check_Jewelry" FromRole="Jewelry" ToRole="Check" />
           <NavigationProperty Name="Parameters" Relationship="JewelryStoreModel.FK_Jewerly_ParametersID_Parameters_ID" FromRole="Jewelry" ToRole="Parameters" />
@@ -365,6 +385,30 @@
           <NavigationProperty Name="Regisration" Relationship="JewelryStoreModel.FK_Regisration_SignIn" FromRole="SignIn" ToRole="Regisration" />
           <NavigationProperty Name="Role" Relationship="JewelryStoreModel.FK_SignIn_RoleID_Role_ID" FromRole="SignIn" ToRole="Role" />
         </EntityType>
+        <Association Name="FK_Basket_Client">
+          <End Type="JewelryStoreModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="JewelryStoreModel.Basket" Role="Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket_Jewelry">
+          <End Type="JewelryStoreModel.Jewelry" Role="Jewelry" Multiplicity="1" />
+          <End Type="JewelryStoreModel.Basket" Role="Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jewelry">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="IDJewelry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Jewerly_CategoryID_Category_ID">
           <End Type="JewelryStoreModel.Category" Role="Category" Multiplicity="1" />
           <End Type="JewelryStoreModel.Jewelry" Role="Jewelry" Multiplicity="*" />
@@ -439,18 +483,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Basket_Check1">
-          <End Type="JewelryStoreModel.Check" Role="Check" Multiplicity="1" />
-          <End Type="JewelryStoreModel.Basket" Role="Basket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Check">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Basket">
-              <PropertyRef Name="IDCheck" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -460,7 +492,8 @@
           <EntitySetMapping Name="Basket">
             <EntityTypeMapping TypeName="JewelryStoreModel.Basket">
               <MappingFragment StoreEntitySet="Basket">
-                <ScalarProperty Name="IDCheck" ColumnName="IDCheck" />
+                <ScalarProperty Name="IDJewelry" ColumnName="IDJewelry" />
+                <ScalarProperty Name="IDClient" ColumnName="IDClient" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
