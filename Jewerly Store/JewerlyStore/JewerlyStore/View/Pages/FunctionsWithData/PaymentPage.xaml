@@ -68,19 +68,47 @@
                     Margin="0,10,0,0"
                     Name="btnOrderDone"
                     Click="btnOrderDone_Click"
-                    materialDesign:ButtonAssist.CornerRadius="15" 
-                    />
+                    materialDesign:ButtonAssist.CornerRadius="15" />
+            
         </StackPanel>
         <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <DataGrid Margin="0,10,0,0"
+                      Grid.Row="0"
                       AutoGenerateColumns="False"
                       Name="BasketList"
                       ColumnWidth="*">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Client" Binding="{Binding IDClient}"/>
-                    <DataGridTextColumn Header="Jewelry" Binding="{Binding IDJewelry}"/>
+                    <DataGridTextColumn Header="ФИО Клиента" Binding="{Binding Client.FullName}"/>
+                    <DataGridTextColumn Header="Бижютерий" Binding="{Binding Jewelry.JewName}"/>
+                    <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding TotalPrice}"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <Button Content="Оформить"
+                        Foreground="White"
+                        Background="Black"
+                        Margin="0,5,0,0"
+                        Name="btnGetBasket"
+                        Width="250"
+                        Click="btnGetBasket_Click"
+                        materialDesign:ButtonAssist.CornerRadius="15" />
+                <Button Content="Удалить"
+                        Foreground="White"
+                        Background="Black"
+                        Margin="10,5,0,0"
+                        Name="btnRemove"
+                        Width="250"
+                        Click="btnRemove_Click"
+                        materialDesign:ButtonAssist.CornerRadius="15" />
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

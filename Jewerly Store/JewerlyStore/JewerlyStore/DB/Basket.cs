@@ -17,6 +17,8 @@ namespace JewerlyStore.DB
         public int ID { get; set; }
         public int IDClient { get; set; }
         public int IDJewelry { get; set; }
+        public int Count { get; set; }
+        public double TotalPrice { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Jewelry Jewelry { get; set; }

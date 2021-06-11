@@ -37,6 +37,7 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             {
                 Check check = new Check();
                 Basket basket = new Basket();
+                Jewelry jewelry = new Jewelry();
                 _idClient = (cmbSelectClient.SelectedItem as Client).ID;
                 _idJewelry = (cmbSelectJewely.SelectedItem as Jewelry).ID;
                 check.IDClient = _idClient;
@@ -49,6 +50,8 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
                 selectedCount.Count = _balance;
                 basket.IDClient = _idClient;
                 basket.IDJewelry = _idJewelry;
+                basket.Count = _count;
+                basket.TotalPrice = _total;
                 ConnectClass.db.Basket.Add(basket);
                 ;
                 ConnectClass.db.SaveChanges();
@@ -124,6 +127,48 @@ namespace JewerlyStore.View.Pages.FunctionsWithData
             _balance = _countJew + _count;
             txbTotalPrice.Text = _total.ToString();
             txbCount.Text = _count.ToString();
+        }
+        /// <summary>
+        /// ОФормить заказ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGetBasket_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var basket = ConnectClass.db.Basket.ToList();
+                ConnectClass.db.Basket.RemoveRange(basket);
+
+                ConnectClass.db.SaveChanges();
+                PrintDialog print = new PrintDialog();
+                if (print.ShowDialog() == true)
+                {
+                    print.PrintVisual(BasketList, "Check");
+                }
+                MessageBox.Show("Оформление чека прошло успешно.", "Чек сохранен!", MessageBoxButton.OK, MessageBoxImage.Information);
+                basketRefresh();
+                NavigationService.Navigate(new MenuPage());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        /// <summary>
+        /// Удалить
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRemove = BasketList.SelectedItem as Basket;
+            if(selectedRemove != null)
+            {
+                ConnectClass.db.Basket.Remove(selectedRemove);
+                ConnectClass.db.SaveChanges();
+                basketRefresh();
+            }
         }
     }
 }

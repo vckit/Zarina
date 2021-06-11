@@ -504,10 +504,8 @@ A:\my-repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\Jewerl
 A:\my-repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.GenerateResource.cache
 A:\my-repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CoreCompileInputs.cache
 A:\my-repository\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CopyComplete
-C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csprojAssemblyReference.cache
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\AutorizationPage.g.cs
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\AddPage.g.cs
-C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\BasketPage.g.cs
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\CheckoutPage.g.cs
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\EditPage.g.cs
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\GetCheckPage.g.cs
@@ -561,7 +559,6 @@ C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\bin\D
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\App.baml
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\AutorizationPage.baml
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\AddPage.baml
-C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\BasketPage.baml
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\CheckoutPage.baml
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\EditPage.baml
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\View\Pages\FunctionsWithData\GetCheckPage.baml
@@ -579,3 +576,4 @@ C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\D
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.GenerateResource.cache
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CoreCompileInputs.cache
 C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csproj.CopyComplete
+C:\Users\thevckit\Downloads\Zarina\Jewerly Store\JewerlyStore\JewerlyStore\obj\Debug\JewerlyStore.csprojAssemblyReference.cache

@@ -52,6 +52,8 @@
     <Property Name="IDJewelry" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Client" Relationship="JewelryStoreModel.FK_Basket_Client" FromRole="Basket" ToRole="Client" />
     <NavigationProperty Name="Jewelry" Relationship="JewelryStoreModel.FK_Basket_Jewelry" FromRole="Basket" ToRole="Jewelry" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Double" Nullable="false" />
   </EntityType>
   <EntityType Name="Category">
     <Key>

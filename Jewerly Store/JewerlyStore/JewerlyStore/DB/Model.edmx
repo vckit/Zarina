@@ -12,6 +12,8 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDClient" Type="int" Nullable="false" />
           <Property Name="IDJewelry" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="TotalPrice" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -93,30 +95,6 @@
           <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="RoleID" Type="nchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Basket_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="1" />
-          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Basket">
-              <PropertyRef Name="IDClient" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Basket_Jewelry">
-          <End Role="Jewelry" Type="Self.Jewelry" Multiplicity="1" />
-          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Jewelry">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Basket">
-              <PropertyRef Name="IDJewelry" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Check_Client">
           <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="Check" Type="Self.Check" Multiplicity="*" />
@@ -201,14 +179,6 @@
           <EntitySet Name="Regisration" EntityType="Self.Regisration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SignIn" EntityType="Self.SignIn" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Basket_Client" Association="Self.FK_Basket_Client">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="Basket" EntitySet="Basket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Basket_Jewelry" Association="Self.FK_Basket_Jewelry">
-            <End Role="Jewelry" EntitySet="Jewelry" />
-            <End Role="Basket" EntitySet="Basket" />
-          </AssociationSet>
           <AssociationSet Name="FK_Check_Client" Association="Self.FK_Check_Client">
             <End Role="Client" EntitySet="Client" />
             <End Role="Check" EntitySet="Check" />
@@ -290,6 +260,8 @@
           <Property Name="IDJewelry" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Client" Relationship="JewelryStoreModel.FK_Basket_Client" FromRole="Basket" ToRole="Client" />
           <NavigationProperty Name="Jewelry" Relationship="JewelryStoreModel.FK_Basket_Jewelry" FromRole="Basket" ToRole="Jewelry" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="TotalPrice" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -492,6 +464,8 @@
           <EntitySetMapping Name="Basket">
             <EntityTypeMapping TypeName="JewelryStoreModel.Basket">
               <MappingFragment StoreEntitySet="Basket">
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="IDJewelry" ColumnName="IDJewelry" />
                 <ScalarProperty Name="IDClient" ColumnName="IDClient" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
