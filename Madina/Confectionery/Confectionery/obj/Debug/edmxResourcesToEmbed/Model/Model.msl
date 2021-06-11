@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="dbConfectioneryModelStoreContainer" CdmEntityContainer="dbConfectioneryEntities">
+    <EntitySetMapping Name="Basket">
+      <EntityTypeMapping TypeName="dbConfectioneryModel.Basket">
+        <MappingFragment StoreEntitySet="Basket">
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="idProduct" ColumnName="idProduct" />
+          <ScalarProperty Name="idClient" ColumnName="idClient" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Card">
       <EntityTypeMapping TypeName="dbConfectioneryModel.Card">
         <MappingFragment StoreEntitySet="Card">
@@ -56,19 +67,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Order">
-      <EntityTypeMapping TypeName="dbConfectioneryModel.Order">
-        <MappingFragment StoreEntitySet="Order">
-          <ScalarProperty Name="staus" ColumnName="staus" />
-          <ScalarProperty Name="comment" ColumnName="comment" />
-          <ScalarProperty Name="dateItsDone" ColumnName="dateItsDone" />
-          <ScalarProperty Name="dateOrder" ColumnName="dateOrder" />
-          <ScalarProperty Name="idProduct" ColumnName="idProduct" />
-          <ScalarProperty Name="idClient" ColumnName="idClient" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PaymentType">
       <EntityTypeMapping TypeName="dbConfectioneryModel.PaymentType">
         <MappingFragment StoreEntitySet="PaymentType">
@@ -80,6 +78,7 @@
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="dbConfectioneryModel.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="count" ColumnName="count" />
           <ScalarProperty Name="photo" ColumnName="photo" />
           <ScalarProperty Name="weight" ColumnName="weight" />
           <ScalarProperty Name="idStructure" ColumnName="idStructure" />

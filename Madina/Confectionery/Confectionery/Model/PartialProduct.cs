@@ -15,5 +15,13 @@ namespace Confectionery.Model
                 photo = value;
             }
         }
+
+        public string GetProduct
+        {
+            get
+            {
+                return $"Наименование - {title}, Цена - {price} руб., Вес - {weight} г.";
+            }
+        }
     }
 }

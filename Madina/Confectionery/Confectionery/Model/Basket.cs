@@ -12,15 +12,13 @@ namespace Confectionery.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Basket
     {
         public int id { get; set; }
         public int idClient { get; set; }
         public int idProduct { get; set; }
-        public System.DateTime dateOrder { get; set; }
-        public System.DateTime dateItsDone { get; set; }
-        public string comment { get; set; }
-        public bool staus { get; set; }
+        public int count { get; set; }
+        public double totalPrice { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Product Product { get; set; }

@@ -17,8 +17,8 @@ namespace Confectionery.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
+            this.Basket = new HashSet<Basket>();
             this.CheckList = new HashSet<CheckList>();
-            this.Order = new HashSet<Order>();
         }
     
         public int id { get; set; }
@@ -28,11 +28,12 @@ namespace Confectionery.Model
         public Nullable<int> idStructure { get; set; }
         public int weight { get; set; }
         public string photo { get; set; }
+        public int count { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CheckList> CheckList { get; set; }
+        public virtual ICollection<Basket> Basket { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<CheckList> CheckList { get; set; }
         public virtual Structure Structure { get; set; }
     }
 }

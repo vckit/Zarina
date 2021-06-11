@@ -68,8 +68,9 @@
                                 <StackPanel>
                                     <Label Content="{Binding title}" ContentStringFormat="Наименование: {0}"/>
                                     <Label Content="{Binding description}" ContentStringFormat="Описание: {0}"/>
-                                    <Label Content="{Binding price}" ContentStringFormat="Цена: {0}"/>
-                                    <Label Content="{Binding weight}" ContentStringFormat="Вес: {0}"/>
+                                    <Label Content="{Binding price}" ContentStringFormat="Цена: {0} руб."/>
+                                    <Label Content="{Binding weight}" ContentStringFormat="Вес: {0} г."/>
+                                    <Label Content="{Binding count}" ContentStringFormat="Количество: {0} шт."/>
                                 </StackPanel>
                             </Grid>
                         </Grid>

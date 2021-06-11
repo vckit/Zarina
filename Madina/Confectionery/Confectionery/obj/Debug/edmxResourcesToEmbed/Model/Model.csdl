@@ -1,15 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dbConfectioneryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="dbConfectioneryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Basket" EntityType="dbConfectioneryModel.Basket" />
     <EntitySet Name="Card" EntityType="dbConfectioneryModel.Card" />
     <EntitySet Name="CheckList" EntityType="dbConfectioneryModel.CheckList" />
     <EntitySet Name="Client" EntityType="dbConfectioneryModel.Client" />
     <EntitySet Name="DataEmploye" EntityType="dbConfectioneryModel.DataEmploye" />
     <EntitySet Name="Login" EntityType="dbConfectioneryModel.Login" />
-    <EntitySet Name="Order" EntityType="dbConfectioneryModel.Order" />
     <EntitySet Name="PaymentType" EntityType="dbConfectioneryModel.PaymentType" />
     <EntitySet Name="Product" EntityType="dbConfectioneryModel.Product" />
     <EntitySet Name="Structure" EntityType="dbConfectioneryModel.Structure" />
+    <AssociationSet Name="FK_Basket_Client" Association="dbConfectioneryModel.FK_Basket_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basket_Product" Association="dbConfectioneryModel.FK_Basket_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
     <AssociationSet Name="FK_Client_Card" Association="dbConfectioneryModel.FK_Client_Card">
       <End Role="Card" EntitySet="Card" />
       <End Role="Client" EntitySet="Client" />
@@ -26,23 +34,27 @@
       <End Role="Product" EntitySet="Product" />
       <End Role="CheckList" EntitySet="CheckList" />
     </AssociationSet>
-    <AssociationSet Name="FK_Order_Client" Association="dbConfectioneryModel.FK_Order_Client">
-      <End Role="Client" EntitySet="Client" />
-      <End Role="Order" EntitySet="Order" />
-    </AssociationSet>
     <AssociationSet Name="FK_DataEmploye_Login" Association="dbConfectioneryModel.FK_DataEmploye_Login">
       <End Role="Login" EntitySet="Login" />
       <End Role="DataEmploye" EntitySet="DataEmploye" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_Product" Association="dbConfectioneryModel.FK_Order_Product">
-      <End Role="Product" EntitySet="Product" />
-      <End Role="Order" EntitySet="Order" />
     </AssociationSet>
     <AssociationSet Name="FK_Product_Structure" Association="dbConfectioneryModel.FK_Product_Structure">
       <End Role="Structure" EntitySet="Structure" />
       <End Role="Product" EntitySet="Product" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Basket">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idClient" Type="Int32" Nullable="false" />
+    <Property Name="idProduct" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <Property Name="totalPrice" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="dbConfectioneryModel.FK_Basket_Client" FromRole="Basket" ToRole="Client" />
+    <NavigationProperty Name="Product" Relationship="dbConfectioneryModel.FK_Basket_Product" FromRole="Basket" ToRole="Product" />
+  </EntityType>
   <EntityType Name="Card">
     <Key>
       <PropertyRef Name="id" />
@@ -77,9 +89,9 @@
     <Property Name="lastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="phone" Type="String" Nullable="false" MaxLength="22" FixedLength="true" Unicode="false" />
     <Property Name="idCard" Type="Int32" />
+    <NavigationProperty Name="Basket" Relationship="dbConfectioneryModel.FK_Basket_Client" FromRole="Client" ToRole="Basket" />
     <NavigationProperty Name="Card" Relationship="dbConfectioneryModel.FK_Client_Card" FromRole="Client" ToRole="Card" />
     <NavigationProperty Name="CheckList" Relationship="dbConfectioneryModel.FK_CheckList_Client" FromRole="Client" ToRole="CheckList" />
-    <NavigationProperty Name="Order" Relationship="dbConfectioneryModel.FK_Order_Client" FromRole="Client" ToRole="Order" />
   </EntityType>
   <EntityType Name="DataEmploye">
     <Key>
@@ -89,7 +101,7 @@
     <Property Name="firstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="lastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="idLogin" Type="Int32" Nullable="false" />
-    <Property Name="numberCertificate" Type="Int32" Nullable="false" />
+    <Property Name="numberCertificate" Type="Int32" />
     <Property Name="dateRegistration" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="Login" Relationship="dbConfectioneryModel.FK_DataEmploye_Login" FromRole="DataEmploye" ToRole="Login" />
   </EntityType>
@@ -101,20 +113,6 @@
     <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DataEmploye" Relationship="dbConfectioneryModel.FK_DataEmploye_Login" FromRole="Login" ToRole="DataEmploye" />
-  </EntityType>
-  <EntityType Name="Order">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="idClient" Type="Int32" Nullable="false" />
-    <Property Name="idProduct" Type="Int32" Nullable="false" />
-    <Property Name="dateOrder" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="dateItsDone" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="staus" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Client" Relationship="dbConfectioneryModel.FK_Order_Client" FromRole="Order" ToRole="Client" />
-    <NavigationProperty Name="Product" Relationship="dbConfectioneryModel.FK_Order_Product" FromRole="Order" ToRole="Product" />
   </EntityType>
   <EntityType Name="PaymentType">
     <Key>
@@ -135,9 +133,10 @@
     <Property Name="idStructure" Type="Int32" />
     <Property Name="weight" Type="Int32" Nullable="false" />
     <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Basket" Relationship="dbConfectioneryModel.FK_Basket_Product" FromRole="Product" ToRole="Basket" />
     <NavigationProperty Name="CheckList" Relationship="dbConfectioneryModel.FK_CheckList_Product" FromRole="Product" ToRole="CheckList" />
-    <NavigationProperty Name="Order" Relationship="dbConfectioneryModel.FK_Order_Product" FromRole="Product" ToRole="Order" />
     <NavigationProperty Name="Structure" Relationship="dbConfectioneryModel.FK_Product_Structure" FromRole="Product" ToRole="Structure" />
+    <Property Name="count" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Structure">
     <Key>
@@ -150,6 +149,30 @@
     <Property Name="carbohydrates" Type="Int32" />
     <NavigationProperty Name="Product" Relationship="dbConfectioneryModel.FK_Product_Structure" FromRole="Structure" ToRole="Product" />
   </EntityType>
+  <Association Name="FK_Basket_Client">
+    <End Type="dbConfectioneryModel.Client" Role="Client" Multiplicity="1" />
+    <End Type="dbConfectioneryModel.Basket" Role="Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basket_Product">
+    <End Type="dbConfectioneryModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="dbConfectioneryModel.Basket" Role="Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Client_Card">
     <End Type="dbConfectioneryModel.Card" Role="Card" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -202,20 +225,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Order_Client">
-    <End Type="dbConfectioneryModel.Client" Role="Client" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="dbConfectioneryModel.Order" Role="Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Client">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="idClient" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DataEmploye_Login">
     <End Type="dbConfectioneryModel.Login" Role="Login" Multiplicity="1" />
     <End Type="dbConfectioneryModel.DataEmploye" Role="DataEmploye" Multiplicity="*" />
@@ -225,20 +234,6 @@
       </Principal>
       <Dependent Role="DataEmploye">
         <PropertyRef Name="idLogin" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Order_Product">
-    <End Type="dbConfectioneryModel.Product" Role="Product" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="dbConfectioneryModel.Order" Role="Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Product">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="idProduct" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

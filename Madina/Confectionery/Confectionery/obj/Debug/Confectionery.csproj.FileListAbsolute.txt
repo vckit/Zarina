@@ -25,4 +25,9 @@ A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Conf
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\BakingPages\BakingActionPage.baml
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\BakingPages\BakingListPage.baml
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Confectionery.csproj.CopyComplete
-A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Confectionery.csprojAssemblyReference.cache
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\OrderPages\OrderCreatePage.g.cs
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\OrderPages\OrderCreatePage.baml
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\OrderPages\CheckoutPage.g.cs
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\OrderPages\CheckoutPage.baml
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\OrderPages\HistoryOrderPage.g.cs
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\OrderPages\HistoryOrderPage.baml

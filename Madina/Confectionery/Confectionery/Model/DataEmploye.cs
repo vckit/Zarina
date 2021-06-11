@@ -18,7 +18,7 @@ namespace Confectionery.Model
         public string firstName { get; set; }
         public string lastName { get; set; }
         public int idLogin { get; set; }
-        public int numberCertificate { get; set; }
+        public Nullable<int> numberCertificate { get; set; }
         public System.DateTime dateRegistration { get; set; }
     
         public virtual Login Login { get; set; }

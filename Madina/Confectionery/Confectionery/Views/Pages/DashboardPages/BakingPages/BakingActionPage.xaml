@@ -49,6 +49,8 @@
                 <TextBox Text="{Binding Product.Structure.carbohydrates}"/>
                 <TextBlock Text="Вес г.:"/>
                 <TextBox Text="{Binding Product.weight}"/>
+                <TextBlock Text="Количество шт.:"/>
+                <TextBox Text="{Binding Product.count}"/>
                 <Button Style="{StaticResource dashboardButtonStyle}"
                         Margin="0,10"
                         Width="250"

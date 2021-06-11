@@ -1,0 +1,34 @@
+﻿<Page x:Class="Confectionery.Views.Pages.DashboardPages.OrderPages.OrderCreatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Confectionery.Views.Pages.DashboardPages.OrderPages"
+      mc:Ignorable="d" FontSize="16"
+      FontFamily="Comic Sans MS"
+      d:DesignHeight="600" d:DesignWidth="1080"
+      Title="Создать заказ">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="300">
+            <TextBlock Text="Фамилия: "/>
+            <TextBox Text="{Binding Client.firstName}"/>
+            <TextBlock Text="Имя: "/>
+            <TextBox Text="{Binding Client.lastName}"/>
+            <TextBlock Text="Телефон: "/>
+            <TextBox Text="{Binding Client.phone}"/>
+            <Button Style="{StaticResource functionButtonStyle}"
+                    Width="300"
+                    Margin="0,5,0,0"
+                    Content="Добавить"
+                    Click="btnAddClient_Click"/>
+            <Button Style="{StaticResource functionButtonStyle}"
+                    Width="300"
+                    Margin="0,5,0,0"
+                    Content="Покупатель существует"
+                    Click="btnSkipAdd_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

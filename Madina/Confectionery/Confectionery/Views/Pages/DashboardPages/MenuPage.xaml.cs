@@ -1,4 +1,6 @@
-﻿using Confectionery.Views.Pages.DashboardPages.BakingPages;
+﻿using Confectionery.Model;
+using Confectionery.Views.Pages.DashboardPages.BakingPages;
+using Confectionery.Views.Pages.DashboardPages.OrderPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,17 +35,13 @@ namespace Confectionery.Views.Pages.DashboardPages
 
         private void btnOrderCreate_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new OrderCreatePage(new Client()));
         }
 
-        private void btnOrderList_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void btnOrderHistory_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new HistoryOrderPage());
         }
     }
 }

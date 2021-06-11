@@ -25,12 +25,12 @@ namespace Confectionery.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Basket> Basket { get; set; }
         public virtual DbSet<Card> Card { get; set; }
         public virtual DbSet<CheckList> CheckList { get; set; }
         public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<DataEmploye> DataEmploye { get; set; }
         public virtual DbSet<Login> Login { get; set; }
-        public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<PaymentType> PaymentType { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Structure> Structure { get; set; }

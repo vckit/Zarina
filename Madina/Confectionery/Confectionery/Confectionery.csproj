@@ -80,6 +80,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\DashboardPages\OrderPages\CheckoutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\DashboardPages\OrderPages\HistoryOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\DashboardPages\OrderPages\OrderCreatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +101,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Context\AppData.cs" />
+    <Compile Include="Model\Basket.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Card.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -119,9 +134,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Order.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Model\PartialClient.cs" />
     <Compile Include="Model\PartialProduct.cs" />
     <Compile Include="Model\PaymentType.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -140,6 +153,15 @@
     </Compile>
     <Compile Include="Views\Pages\DashboardPages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\DashboardPages\OrderPages\CheckoutPage.xaml.cs">
+      <DependentUpon>CheckoutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\DashboardPages\OrderPages\HistoryOrderPage.xaml.cs">
+      <DependentUpon>HistoryOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\DashboardPages\OrderPages\OrderCreatePage.xaml.cs">
+      <DependentUpon>OrderCreatePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

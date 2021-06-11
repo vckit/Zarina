@@ -1,0 +1,40 @@
+﻿<Page x:Class="Confectionery.Views.Pages.DashboardPages.OrderPages.HistoryOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Confectionery.Views.Pages.DashboardPages.OrderPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1080"
+      Title="Истрия реализвации">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ListView Name="HistoryProductList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <StackPanel>
+                                <Label Content="{Binding Client.FullName}" ContentStringFormat="ФИО Клиента: {0}"/>
+                                <Label Content="{Binding Client.phone}" ContentStringFormat="Телефон: {0}"/>
+                                <Label Content="{Binding count}" ContentStringFormat="Количество: {0} шт."/>
+                                <Label Content="{Binding dateCheck}" ContentStringFormat="Дата покупки: {0}"/>
+                                <Label Content="{Binding totalPrice}" ContentStringFormat="Итоговая цена: {0} руб."/>
+                                <Label Content="{Binding PaymentType.title}" ContentStringFormat="Способ оплаты: {0}"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
