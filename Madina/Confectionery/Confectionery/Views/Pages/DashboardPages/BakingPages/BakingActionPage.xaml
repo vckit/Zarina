@@ -20,10 +20,12 @@
                         VerticalAlignment="Center">
                 <Border BorderThickness="2">
                     <Image Height="200"
-                           Name="Picture"/>
+                           Name="Picture"
+                           Source="{Binding Product.GetPucture}"/>
                 </Border>
                 <Button Content="Выбрать"
-                        Style="{StaticResource dashboardButtonStyle}"/>
+                        Style="{StaticResource dashboardButtonStyle}"
+                        Click="btnSelectPicture_Click"/>
             </StackPanel>
         </Grid>
 
@@ -47,7 +49,11 @@
                 <TextBox Text="{Binding Product.Structure.carbohydrates}"/>
                 <TextBlock Text="Вес г.:"/>
                 <TextBox Text="{Binding Product.weight}"/>
-                
+                <Button Style="{StaticResource dashboardButtonStyle}"
+                        Margin="0,10"
+                        Width="250"
+                        Content="Сохранить"
+                        Click="btnSaveChanges_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

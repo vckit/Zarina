@@ -79,7 +79,7 @@
     <Property Name="price" Type="float" Nullable="false" />
     <Property Name="idStructure" Type="int" />
     <Property Name="weight" Type="int" Nullable="false" />
-    <Property Name="photo" Type="image" />
+    <Property Name="photo" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Structure">
     <Key>

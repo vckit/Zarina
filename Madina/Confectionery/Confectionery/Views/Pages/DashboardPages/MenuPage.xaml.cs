@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Confectionery.Views.Pages.DashboardPages.BakingPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,21 @@ namespace Confectionery.Views.Pages.DashboardPages
         }
 
         private void btnBaking_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BakingListPage());
+        }
+
+        private void btnOrderCreate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnOrderList_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnOrderHistory_Click(object sender, RoutedEventArgs e)
         {
 
         }

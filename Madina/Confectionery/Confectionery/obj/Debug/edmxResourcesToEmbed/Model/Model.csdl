@@ -1,14 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dbConfectioneryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dbConfectioneryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Card" EntityType="dbConfectioneryModel.Card" />
+    <EntitySet Name="CheckList" EntityType="dbConfectioneryModel.CheckList" />
+    <EntitySet Name="Client" EntityType="dbConfectioneryModel.Client" />
+    <EntitySet Name="DataEmploye" EntityType="dbConfectioneryModel.DataEmploye" />
+    <EntitySet Name="Login" EntityType="dbConfectioneryModel.Login" />
+    <EntitySet Name="Order" EntityType="dbConfectioneryModel.Order" />
+    <EntitySet Name="PaymentType" EntityType="dbConfectioneryModel.PaymentType" />
+    <EntitySet Name="Product" EntityType="dbConfectioneryModel.Product" />
+    <EntitySet Name="Structure" EntityType="dbConfectioneryModel.Structure" />
+    <AssociationSet Name="FK_Client_Card" Association="dbConfectioneryModel.FK_Client_Card">
+      <End Role="Card" EntitySet="Card" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CheckList_Client" Association="dbConfectioneryModel.FK_CheckList_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="CheckList" EntitySet="CheckList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CheckList_PaymentType" Association="dbConfectioneryModel.FK_CheckList_PaymentType">
+      <End Role="PaymentType" EntitySet="PaymentType" />
+      <End Role="CheckList" EntitySet="CheckList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CheckList_Product" Association="dbConfectioneryModel.FK_CheckList_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="CheckList" EntitySet="CheckList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Client" Association="dbConfectioneryModel.FK_Order_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataEmploye_Login" Association="dbConfectioneryModel.FK_DataEmploye_Login">
+      <End Role="Login" EntitySet="Login" />
+      <End Role="DataEmploye" EntitySet="DataEmploye" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Product" Association="dbConfectioneryModel.FK_Order_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Structure" Association="dbConfectioneryModel.FK_Product_Structure">
+      <End Role="Structure" EntitySet="Structure" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Card">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="number" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="cvc" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="shelfLife" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Client" Relationship="Self.FK_Client_Card" FromRole="Card" ToRole="Client" />
+    <Property Name="number" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="cvc" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="shelfLife" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Client" Relationship="dbConfectioneryModel.FK_Client_Card" FromRole="Card" ToRole="Client" />
   </EntityType>
   <EntityType Name="CheckList">
     <Key>
@@ -21,43 +64,43 @@
     <Property Name="totalPrice" Type="Double" Nullable="false" />
     <Property Name="dateCheck" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="idPayment" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Client" Relationship="Self.FK_CheckList_Client" FromRole="CheckList" ToRole="Client" />
-    <NavigationProperty Name="PaymentType" Relationship="Self.FK_CheckList_PaymentType" FromRole="CheckList" ToRole="PaymentType" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_CheckList_Product" FromRole="CheckList" ToRole="Product" />
+    <NavigationProperty Name="Client" Relationship="dbConfectioneryModel.FK_CheckList_Client" FromRole="CheckList" ToRole="Client" />
+    <NavigationProperty Name="PaymentType" Relationship="dbConfectioneryModel.FK_CheckList_PaymentType" FromRole="CheckList" ToRole="PaymentType" />
+    <NavigationProperty Name="Product" Relationship="dbConfectioneryModel.FK_CheckList_Product" FromRole="CheckList" ToRole="Product" />
   </EntityType>
   <EntityType Name="Client">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="phone" Type="String" MaxLength="22" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="firstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="22" FixedLength="true" Unicode="false" />
     <Property Name="idCard" Type="Int32" />
-    <NavigationProperty Name="Card" Relationship="Self.FK_Client_Card" FromRole="Client" ToRole="Card" />
-    <NavigationProperty Name="CheckList" Relationship="Self.FK_CheckList_Client" FromRole="Client" ToRole="CheckList" />
-    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Client" FromRole="Client" ToRole="Order" />
+    <NavigationProperty Name="Card" Relationship="dbConfectioneryModel.FK_Client_Card" FromRole="Client" ToRole="Card" />
+    <NavigationProperty Name="CheckList" Relationship="dbConfectioneryModel.FK_CheckList_Client" FromRole="Client" ToRole="CheckList" />
+    <NavigationProperty Name="Order" Relationship="dbConfectioneryModel.FK_Order_Client" FromRole="Client" ToRole="Order" />
   </EntityType>
   <EntityType Name="DataEmploye">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="idLogin" Type="Int32" Nullable="false" />
     <Property Name="numberCertificate" Type="Int32" Nullable="false" />
     <Property Name="dateRegistration" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="Login" Relationship="Self.FK_DataEmploye_Login" FromRole="DataEmploye" ToRole="Login" />
+    <NavigationProperty Name="Login" Relationship="dbConfectioneryModel.FK_DataEmploye_Login" FromRole="DataEmploye" ToRole="Login" />
   </EntityType>
   <EntityType Name="Login">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="DataEmploye" Relationship="Self.FK_DataEmploye_Login" FromRole="Login" ToRole="DataEmploye" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DataEmploye" Relationship="dbConfectioneryModel.FK_DataEmploye_Login" FromRole="Login" ToRole="DataEmploye" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -70,31 +113,31 @@
     <Property Name="dateItsDone" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="staus" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_Order_Product" FromRole="Order" ToRole="Product" />
+    <NavigationProperty Name="Client" Relationship="dbConfectioneryModel.FK_Order_Client" FromRole="Order" ToRole="Client" />
+    <NavigationProperty Name="Product" Relationship="dbConfectioneryModel.FK_Order_Product" FromRole="Order" ToRole="Product" />
   </EntityType>
   <EntityType Name="PaymentType">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="CheckList" Relationship="Self.FK_CheckList_PaymentType" FromRole="PaymentType" ToRole="CheckList" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CheckList" Relationship="dbConfectioneryModel.FK_CheckList_PaymentType" FromRole="PaymentType" ToRole="CheckList" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="price" Type="Double" Nullable="false" />
     <Property Name="idStructure" Type="Int32" />
     <Property Name="weight" Type="Int32" Nullable="false" />
-    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="CheckList" Relationship="Self.FK_CheckList_Product" FromRole="Product" ToRole="CheckList" />
-    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Product" FromRole="Product" ToRole="Order" />
-    <NavigationProperty Name="Structure" Relationship="Self.FK_Product_Structure" FromRole="Product" ToRole="Structure" />
+    <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CheckList" Relationship="dbConfectioneryModel.FK_CheckList_Product" FromRole="Product" ToRole="CheckList" />
+    <NavigationProperty Name="Order" Relationship="dbConfectioneryModel.FK_Order_Product" FromRole="Product" ToRole="Order" />
+    <NavigationProperty Name="Structure" Relationship="dbConfectioneryModel.FK_Product_Structure" FromRole="Product" ToRole="Structure" />
   </EntityType>
   <EntityType Name="Structure">
     <Key>
@@ -105,13 +148,13 @@
     <Property Name="fats" Type="Int32" />
     <Property Name="sugar" Type="Int32" />
     <Property Name="carbohydrates" Type="Int32" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_Product_Structure" FromRole="Structure" ToRole="Product" />
+    <NavigationProperty Name="Product" Relationship="dbConfectioneryModel.FK_Product_Structure" FromRole="Structure" ToRole="Product" />
   </EntityType>
   <Association Name="FK_Client_Card">
-    <End Role="Card" Type="Self.Card" Multiplicity="0..1">
+    <End Type="dbConfectioneryModel.Card" Role="Card" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <End Type="dbConfectioneryModel.Client" Role="Client" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Card">
         <PropertyRef Name="id" />
@@ -122,8 +165,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CheckList_Client">
-    <End Role="Client" Type="Self.Client" Multiplicity="1" />
-    <End Role="CheckList" Type="Self.CheckList" Multiplicity="*" />
+    <End Type="dbConfectioneryModel.Client" Role="Client" Multiplicity="1" />
+    <End Type="dbConfectioneryModel.CheckList" Role="CheckList" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Client">
         <PropertyRef Name="id" />
@@ -134,10 +177,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CheckList_PaymentType">
-    <End Role="PaymentType" Type="Self.PaymentType" Multiplicity="1">
+    <End Type="dbConfectioneryModel.PaymentType" Role="PaymentType" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="CheckList" Type="Self.CheckList" Multiplicity="*" />
+    <End Type="dbConfectioneryModel.CheckList" Role="CheckList" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PaymentType">
         <PropertyRef Name="id" />
@@ -148,8 +191,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CheckList_Product">
-    <End Role="Product" Type="Self.Product" Multiplicity="1" />
-    <End Role="CheckList" Type="Self.CheckList" Multiplicity="*" />
+    <End Type="dbConfectioneryModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="dbConfectioneryModel.CheckList" Role="CheckList" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Product">
         <PropertyRef Name="id" />
@@ -160,10 +203,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_Client">
-    <End Role="Client" Type="Self.Client" Multiplicity="1">
+    <End Type="dbConfectioneryModel.Client" Role="Client" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Type="dbConfectioneryModel.Order" Role="Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Client">
         <PropertyRef Name="id" />
@@ -174,8 +217,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_DataEmploye_Login">
-    <End Role="Login" Type="Self.Login" Multiplicity="1" />
-    <End Role="DataEmploye" Type="Self.DataEmploye" Multiplicity="*" />
+    <End Type="dbConfectioneryModel.Login" Role="Login" Multiplicity="1" />
+    <End Type="dbConfectioneryModel.DataEmploye" Role="DataEmploye" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Login">
         <PropertyRef Name="id" />
@@ -186,10 +229,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_Product">
-    <End Role="Product" Type="Self.Product" Multiplicity="1">
+    <End Type="dbConfectioneryModel.Product" Role="Product" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Type="dbConfectioneryModel.Order" Role="Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Product">
         <PropertyRef Name="id" />
@@ -200,10 +243,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Product_Structure">
-    <End Role="Structure" Type="Self.Structure" Multiplicity="1">
+    <End Type="dbConfectioneryModel.Structure" Role="Structure" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <End Type="dbConfectioneryModel.Product" Role="Product" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Structure">
         <PropertyRef Name="id" />
@@ -213,47 +256,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="dbConfectioneryEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Card" EntityType="Self.Card" />
-    <EntitySet Name="CheckList" EntityType="Self.CheckList" />
-    <EntitySet Name="Client" EntityType="Self.Client" />
-    <EntitySet Name="DataEmploye" EntityType="Self.DataEmploye" />
-    <EntitySet Name="Login" EntityType="Self.Login" />
-    <EntitySet Name="Order" EntityType="Self.Order" />
-    <EntitySet Name="PaymentType" EntityType="Self.PaymentType" />
-    <EntitySet Name="Product" EntityType="Self.Product" />
-    <EntitySet Name="Structure" EntityType="Self.Structure" />
-    <AssociationSet Name="FK_Client_Card" Association="Self.FK_Client_Card">
-      <End Role="Card" EntitySet="Card" />
-      <End Role="Client" EntitySet="Client" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CheckList_Client" Association="Self.FK_CheckList_Client">
-      <End Role="Client" EntitySet="Client" />
-      <End Role="CheckList" EntitySet="CheckList" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CheckList_PaymentType" Association="Self.FK_CheckList_PaymentType">
-      <End Role="PaymentType" EntitySet="PaymentType" />
-      <End Role="CheckList" EntitySet="CheckList" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CheckList_Product" Association="Self.FK_CheckList_Product">
-      <End Role="Product" EntitySet="Product" />
-      <End Role="CheckList" EntitySet="CheckList" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_Client" Association="Self.FK_Order_Client">
-      <End Role="Client" EntitySet="Client" />
-      <End Role="Order" EntitySet="Order" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DataEmploye_Login" Association="Self.FK_DataEmploye_Login">
-      <End Role="Login" EntitySet="Login" />
-      <End Role="DataEmploye" EntitySet="DataEmploye" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_Product" Association="Self.FK_Order_Product">
-      <End Role="Product" EntitySet="Product" />
-      <End Role="Order" EntitySet="Order" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Product_Structure" Association="Self.FK_Product_Structure">
-      <End Role="Structure" EntitySet="Structure" />
-      <End Role="Product" EntitySet="Product" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

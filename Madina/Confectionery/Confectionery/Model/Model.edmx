@@ -84,7 +84,7 @@
           <Property Name="price" Type="float" Nullable="false" />
           <Property Name="idStructure" Type="int" />
           <Property Name="weight" Type="int" Nullable="false" />
-          <Property Name="photo" Type="image" />
+          <Property Name="photo" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Structure">
           <Key>
@@ -383,7 +383,7 @@
           <Property Name="price" Type="Double" Nullable="false" />
           <Property Name="idStructure" Type="Int32" />
           <Property Name="weight" Type="Int32" Nullable="false" />
-          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CheckList" Relationship="dbConfectioneryModel.FK_CheckList_Product" FromRole="Product" ToRole="CheckList" />
           <NavigationProperty Name="Order" Relationship="dbConfectioneryModel.FK_Order_Product" FromRole="Product" ToRole="Order" />
           <NavigationProperty Name="Structure" Relationship="dbConfectioneryModel.FK_Product_Structure" FromRole="Product" ToRole="Structure" />
@@ -505,7 +505,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>

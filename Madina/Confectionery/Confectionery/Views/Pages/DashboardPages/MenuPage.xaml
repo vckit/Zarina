@@ -19,16 +19,16 @@
                     Content="Оформить заказ"
                     Name="btnCheckout"
                     Margin="0,10"
-                    Click="btnBaking_Click"/>
+                    Click="btnOrderCreate_Click"/>
             <Button Style="{StaticResource dashboardButtonStyle}"
                     Content="Список заказов"
                     Name="btnOrderList"
-                    Click="btnBaking_Click"/>
+                    Click="btnOrderList_Click"/>
             <Button Style="{StaticResource dashboardButtonStyle}"
                     Content="История заказов"
                     Name="btnHistoryOrder"
                     Margin="0,10"
-                    Click="btnBaking_Click"/>
+                    Click="btnOrderHistory_Click"/>
         </StackPanel>
     </Grid>
 </Page>

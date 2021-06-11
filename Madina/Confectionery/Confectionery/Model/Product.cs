@@ -27,7 +27,7 @@ namespace Confectionery.Model
         public double price { get; set; }
         public Nullable<int> idStructure { get; set; }
         public int weight { get; set; }
-        public byte[] photo { get; set; }
+        public string photo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CheckList> CheckList { get; set; }

@@ -25,3 +25,4 @@ A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Conf
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\BakingPages\BakingActionPage.baml
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\BakingPages\BakingListPage.baml
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Confectionery.csproj.CopyComplete
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Confectionery.csprojAssemblyReference.cache

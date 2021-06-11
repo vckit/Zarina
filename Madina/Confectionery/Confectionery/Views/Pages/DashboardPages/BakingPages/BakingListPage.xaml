@@ -4,11 +4,96 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Confectionery.Views.Pages.DashboardPages.BakingPages"
-      mc:Ignorable="d" 
+      mc:Ignorable="d" Loaded="Page_Loaded" FontFamily="Comic Sans MS"
       d:DesignHeight="600" d:DesignWidth="1080"
       Title="Список выпечек">
 
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Экспорт: "
+                           VerticalAlignment="Center"
+                           FontSize="24"
+                           Foreground="Pink"
+                           FontWeight="Bold"/>
+                <Button Style="{StaticResource functionButtonStyle}"
+                        Content=".PDF"
+                        Click="btnPDFExport_Click"/>
+                <Button Style="{StaticResource functionButtonStyle}"
+                        Content=".CSV"
+                        Click="btnCSVExport_Click"
+                        Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                
+            </StackPanel>
+        </Grid>
         
+        <Grid Grid.Row="1">
+            <ListView x:Name="ProductList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <Image Source="{Binding GetPucture}"
+                                       Width="150"
+                                       Height="150"/>
+                            </Grid>
+
+                            <Grid Grid.Column="1"
+                                  Margin="5,10,0,0">
+                                <StackPanel>
+                                    <Label Content="{Binding title}" ContentStringFormat="Наименование: {0}"/>
+                                    <Label Content="{Binding description}" ContentStringFormat="Описание: {0}"/>
+                                    <Label Content="{Binding price}" ContentStringFormat="Цена: {0}"/>
+                                    <Label Content="{Binding weight}" ContentStringFormat="Вес: {0}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Grid Grid.Row="2">
+
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <Button Style="{StaticResource dashboardButtonStyle}"
+                        Content="Добавить"
+                        Click="btnAddNext_Click"/>
+                <Button Style="{StaticResource dashboardButtonStyle}"
+                        Content="Редактировать"
+                        Click="btnEdit_Click"
+                        Margin="10,0"/>
+                <Button Style="{StaticResource dashboardButtonStyle}"
+                        Content="Удалить"
+                        Click="btnRemove_Click"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

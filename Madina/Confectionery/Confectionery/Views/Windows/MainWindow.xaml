@@ -18,7 +18,8 @@
                         Margin="0,0,10,0">
                 <Button x:Name="btnBack"
                         Style="{StaticResource functionButtonStyle}"
-                        Content="Назад"/>
+                        Content="Назад"
+                        Click="btnBack_Click"/>
             </StackPanel>
         </Grid>
 

@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 
+
 namespace Confectionery
 {
     /// <summary>
@@ -18,6 +19,12 @@ namespace Confectionery
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
             btnBack.Visibility = MainFrame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.GoBack();
+            GC.Collect();
         }
     }
 }

@@ -4,100 +4,100 @@
     <EntitySetMapping Name="Card">
       <EntityTypeMapping TypeName="dbConfectioneryModel.Card">
         <MappingFragment StoreEntitySet="Card">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="number" ColumnName="number" />
-          <ScalarProperty Name="cvc" ColumnName="cvc" />
           <ScalarProperty Name="shelfLife" ColumnName="shelfLife" />
+          <ScalarProperty Name="cvc" ColumnName="cvc" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CheckList">
       <EntityTypeMapping TypeName="dbConfectioneryModel.CheckList">
         <MappingFragment StoreEntitySet="CheckList">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="idProduct" ColumnName="idProduct" />
-          <ScalarProperty Name="idClient" ColumnName="idClient" />
-          <ScalarProperty Name="count" ColumnName="count" />
-          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
-          <ScalarProperty Name="dateCheck" ColumnName="dateCheck" />
           <ScalarProperty Name="idPayment" ColumnName="idPayment" />
+          <ScalarProperty Name="dateCheck" ColumnName="dateCheck" />
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="idClient" ColumnName="idClient" />
+          <ScalarProperty Name="idProduct" ColumnName="idProduct" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Client">
       <EntityTypeMapping TypeName="dbConfectioneryModel.Client">
         <MappingFragment StoreEntitySet="Client">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="firstName" ColumnName="firstName" />
-          <ScalarProperty Name="lastName" ColumnName="lastName" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="idCard" ColumnName="idCard" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DataEmploye">
       <EntityTypeMapping TypeName="dbConfectioneryModel.DataEmploye">
         <MappingFragment StoreEntitySet="DataEmploye">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="firstName" ColumnName="firstName" />
-          <ScalarProperty Name="lastName" ColumnName="lastName" />
-          <ScalarProperty Name="idLogin" ColumnName="idLogin" />
-          <ScalarProperty Name="numberCertificate" ColumnName="numberCertificate" />
           <ScalarProperty Name="dateRegistration" ColumnName="dateRegistration" />
+          <ScalarProperty Name="numberCertificate" ColumnName="numberCertificate" />
+          <ScalarProperty Name="idLogin" ColumnName="idLogin" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Login">
       <EntityTypeMapping TypeName="dbConfectioneryModel.Login">
         <MappingFragment StoreEntitySet="Login">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Order">
       <EntityTypeMapping TypeName="dbConfectioneryModel.Order">
         <MappingFragment StoreEntitySet="Order">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="idClient" ColumnName="idClient" />
-          <ScalarProperty Name="idProduct" ColumnName="idProduct" />
-          <ScalarProperty Name="dateOrder" ColumnName="dateOrder" />
-          <ScalarProperty Name="dateItsDone" ColumnName="dateItsDone" />
-          <ScalarProperty Name="comment" ColumnName="comment" />
           <ScalarProperty Name="staus" ColumnName="staus" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="dateItsDone" ColumnName="dateItsDone" />
+          <ScalarProperty Name="dateOrder" ColumnName="dateOrder" />
+          <ScalarProperty Name="idProduct" ColumnName="idProduct" />
+          <ScalarProperty Name="idClient" ColumnName="idClient" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PaymentType">
       <EntityTypeMapping TypeName="dbConfectioneryModel.PaymentType">
         <MappingFragment StoreEntitySet="PaymentType">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="dbConfectioneryModel.Product">
         <MappingFragment StoreEntitySet="Product">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="title" ColumnName="title" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="idStructure" ColumnName="idStructure" />
-          <ScalarProperty Name="weight" ColumnName="weight" />
           <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="idStructure" ColumnName="idStructure" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Structure">
       <EntityTypeMapping TypeName="dbConfectioneryModel.Structure">
         <MappingFragment StoreEntitySet="Structure">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="calories" ColumnName="calories" />
-          <ScalarProperty Name="fats" ColumnName="fats" />
-          <ScalarProperty Name="sugar" ColumnName="sugar" />
           <ScalarProperty Name="carbohydrates" ColumnName="carbohydrates" />
+          <ScalarProperty Name="sugar" ColumnName="sugar" />
+          <ScalarProperty Name="fats" ColumnName="fats" />
+          <ScalarProperty Name="calories" ColumnName="calories" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
