@@ -1,0 +1,54 @@
+﻿<Page x:Class="Confectionery.Views.Pages.DashboardPages.BakingPages.BakingActionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Confectionery.Views.Pages.DashboardPages.BakingPages"
+      mc:Ignorable="d" FontFamily="Comic Sans MS"
+      FontSize="16"
+      d:DesignHeight="600" d:DesignWidth="1080"
+      Title="Добавление / Редактирование выпечек">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <Border BorderThickness="2">
+                    <Image Height="200"
+                           Name="Picture"/>
+                </Border>
+                <Button Content="Выбрать"
+                        Style="{StaticResource dashboardButtonStyle}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Width="250">
+                <TextBlock Text="Наименование:"/>
+                <TextBox Text="{Binding Product.title}"/>
+                <TextBlock Text="Описание (необязательно):"/>
+                <TextBox Text="{Binding Product.description}"/>
+                <TextBlock Text="Цена:"/>
+                <TextBox Text="{Binding Product.price}"/>
+                <TextBlock Text="Калории г.:"/>
+                <TextBox Text="{Binding Product.Structure.calories}"/>
+                <TextBlock Text="Жиры г.:"/>
+                <TextBox Text="{Binding Product.Structure.fats}"/>
+                <TextBlock Text="Сахар г.:"/>
+                <TextBox Text="{Binding Product.Structure.sugar}"/>
+                <TextBlock Text="Углеводы г.:"/>
+                <TextBox Text="{Binding Product.Structure.carbohydrates}"/>
+                <TextBlock Text="Вес г.:"/>
+                <TextBox Text="{Binding Product.weight}"/>
+                
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

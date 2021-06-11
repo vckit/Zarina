@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8546f5b895d5449b81bca735ec8d31b2" Name="Diagram1">
+        <EntityTypeShape EntityType="dbConfectioneryModel.Card" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="dbConfectioneryModel.CheckList" Width="1.5" PointX="5.25" PointY="4.75" />
+        <EntityTypeShape EntityType="dbConfectioneryModel.Client" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="dbConfectioneryModel.DataEmploye" Width="1.5" PointX="8" PointY="8.75" />
+        <EntityTypeShape EntityType="dbConfectioneryModel.Login" Width="1.5" PointX="5.75" PointY="9.125" />
+        <EntityTypeShape EntityType="dbConfectioneryModel.Order" Width="1.5" PointX="8.25" PointY="4.875" />
+        <EntityTypeShape EntityType="dbConfectioneryModel.PaymentType" Width="1.5" PointX="3" PointY="9" />
+        <EntityTypeShape EntityType="dbConfectioneryModel.Product" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="dbConfectioneryModel.Structure" Width="1.5" PointX="0.75" PointY="5.125" />
+        <AssociationConnector Association="dbConfectioneryModel.FK_Client_Card" />
+        <AssociationConnector Association="dbConfectioneryModel.FK_CheckList_Client" />
+        <AssociationConnector Association="dbConfectioneryModel.FK_CheckList_PaymentType" />
+        <AssociationConnector Association="dbConfectioneryModel.FK_CheckList_Product" />
+        <AssociationConnector Association="dbConfectioneryModel.FK_Order_Client" />
+        <AssociationConnector Association="dbConfectioneryModel.FK_DataEmploye_Login" />
+        <AssociationConnector Association="dbConfectioneryModel.FK_Order_Product" />
+        <AssociationConnector Association="dbConfectioneryModel.FK_Product_Structure" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

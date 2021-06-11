@@ -1,0 +1,34 @@
+﻿<Page x:Class="Confectionery.Views.Pages.DashboardPages.MenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Confectionery.Views.Pages.DashboardPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1080"
+      Title="Меню">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Button Style="{StaticResource dashboardButtonStyle}"
+                    Content="Выпечки"
+                    Name="btnBaking"
+                    Click="btnBaking_Click"/>
+            <Button Style="{StaticResource dashboardButtonStyle}"
+                    Content="Оформить заказ"
+                    Name="btnCheckout"
+                    Margin="0,10"
+                    Click="btnBaking_Click"/>
+            <Button Style="{StaticResource dashboardButtonStyle}"
+                    Content="Список заказов"
+                    Name="btnOrderList"
+                    Click="btnBaking_Click"/>
+            <Button Style="{StaticResource dashboardButtonStyle}"
+                    Content="История заказов"
+                    Name="btnHistoryOrder"
+                    Margin="0,10"
+                    Click="btnBaking_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
