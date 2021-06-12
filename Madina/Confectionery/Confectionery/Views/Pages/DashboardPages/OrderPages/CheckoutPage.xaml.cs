@@ -163,6 +163,8 @@ namespace Confectionery.Views.Pages.DashboardPages.OrderPages
                 }
                 MessageBox.Show("Оформление чека прошло успешно.", "Чек сохранен!", MessageBoxButton.OK, MessageBoxImage.Information);
                 BasketList.ItemsSource = AppData.db.Basket.ToList();
+                NavigationService.Navigate(new MenuPage());
+                GC.Collect();
             }
             catch (Exception ex)
             {

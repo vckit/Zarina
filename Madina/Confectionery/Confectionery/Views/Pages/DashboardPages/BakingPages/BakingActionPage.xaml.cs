@@ -33,6 +33,7 @@ namespace Confectionery.Views.Pages.DashboardPages.BakingPages
             Product.GetPucture = "\\pics\\" + System.IO.Path.GetFileName(file.FileName);
             AppData.db.SaveChanges();
             MessageBox.Show("Данные успешно сохранены в Базе Данных.", "Внимание, операция прошла успешно!", MessageBoxButton.OK, MessageBoxImage.Information);
+            GC.Collect();
             NavigationService.GoBack();
         }
         OpenFileDialog file = new OpenFileDialog();
