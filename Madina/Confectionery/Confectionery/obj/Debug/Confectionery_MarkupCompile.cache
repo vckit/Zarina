@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\App.xaml
-7-1443308303
+9-86525272
 2482335943
-26824309149
+29359165535
 19-717674274
-Views\Pages\DashboardPages\BakingPages\BakingActionPage.xaml;Views\Pages\DashboardPages\BakingPages\BakingListPage.xaml;Views\Pages\DashboardPages\MenuPage.xaml;Views\Pages\DashboardPages\OrderPages\CheckoutPage.xaml;Views\Pages\DashboardPages\OrderPages\HistoryOrderPage.xaml;Views\Pages\DashboardPages\OrderPages\OrderCreatePage.xaml;Views\Windows\MainWindow.xaml;
+Views\Pages\DashboardPages\BakingPages\BakingActionPage.xaml;Views\Pages\DashboardPages\BakingPages\BakingListPage.xaml;Views\Pages\DashboardPages\MenuPage.xaml;Views\Pages\DashboardPages\OrderPages\CheckoutPage.xaml;Views\Pages\DashboardPages\OrderPages\HistoryOrderPage.xaml;Views\Pages\DashboardPages\OrderPages\OrderCreatePage.xaml;Views\Pages\FunctionPages\LoginPage.xaml;Views\Pages\FunctionPages\RegistrationPage.xaml;Views\Windows\MainWindow.xaml;
 
 False
 

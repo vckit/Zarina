@@ -92,6 +92,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\FunctionPages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\FunctionPages\RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -101,6 +109,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Context\AppData.cs" />
+    <Compile Include="HelperObject\HelperClass.cs" />
     <Compile Include="Model\Basket.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -163,6 +172,12 @@
     <Compile Include="Views\Pages\DashboardPages\OrderPages\OrderCreatePage.xaml.cs">
       <DependentUpon>OrderCreatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\FunctionPages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\FunctionPages\RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -203,7 +218,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Pages\FunctionPages\" />
     <Folder Include="Views\Pages\SystemPages\" />
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +231,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

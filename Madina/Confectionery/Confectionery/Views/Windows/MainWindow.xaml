@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Confectionery"
-        mc:Ignorable="d"
+        mc:Ignorable="d" FontFamily="Comic Sans MS"
         Title="{Binding ElementName=MainFrame, Path=Content.Title}" Height="600" Width="1080">
     <Grid>
         <Grid.RowDefinitions>
@@ -12,12 +12,22 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0"
+              Background="Pink">
+            <StackPanel HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="10,0,0,0">
+                <TextBlock Text="Confectionery Application - Кондицерская"
+                           FontSize="34"
+                           Foreground="White"
+                           FontWeight="Bold"/>
+            </StackPanel>
             <StackPanel HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         Margin="0,0,10,0">
                 <Button x:Name="btnBack"
                         Style="{StaticResource functionButtonStyle}"
+                        BorderBrush="White"
                         Content="Назад"
                         Click="btnBack_Click"/>
             </StackPanel>

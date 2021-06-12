@@ -1,4 +1,4 @@
-﻿using Confectionery.Views.Pages.DashboardPages;
+﻿using Confectionery.Views.Pages.FunctionPages;
 using System;
 using System.Windows;
 
@@ -13,7 +13,7 @@ namespace Confectionery
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new MenuPage());
+            MainFrame.Navigate(new LoginPage());
         }
 
         private void MainFrame_ContentRendered(object sender, EventArgs e)

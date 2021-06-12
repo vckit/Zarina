@@ -24,6 +24,11 @@
                     Content="История заказов"
                     Name="btnHistoryOrder"
                     Click="btnOrderHistory_Click"/>
+            <Button Style="{StaticResource dashboardButtonStyle}"
+                    Content="Выйти"
+                    Name="btnLogOut"
+                    Margin="0,10"
+                    Click="btnLogOut_Click"/>
         </StackPanel>
     </Grid>
 </Page>

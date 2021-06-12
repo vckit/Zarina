@@ -10,12 +10,20 @@
             <Setter Property="Width" Value="150"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Height" Value="28"/>
-            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Background" Value="Pink"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
-        
+        <!--style function button-->
+        <Style TargetType="Button" x:Key="loginButtonStyle">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="Background" Value="Pink"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
         <!--style dashboard button-->
         <Style TargetType="Button" x:Key="dashboardButtonStyle">
             <Setter Property="FontFamily" Value="Comic Sans MS"/>

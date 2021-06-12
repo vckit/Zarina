@@ -31,3 +31,8 @@ A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\View
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\OrderPages\CheckoutPage.baml
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\OrderPages\HistoryOrderPage.g.cs
 A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\DashboardPages\OrderPages\HistoryOrderPage.baml
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Confectionery.csprojAssemblyReference.cache
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\FunctionPages\LoginPage.g.cs
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\FunctionPages\RegistrationPage.g.cs
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\FunctionPages\LoginPage.baml
+A:\GitHub\My-Repository\Zarina\Madina\Confectionery\Confectionery\obj\Debug\Views\Pages\FunctionPages\RegistrationPage.baml
