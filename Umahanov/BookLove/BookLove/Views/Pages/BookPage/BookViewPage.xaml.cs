@@ -67,14 +67,14 @@ namespace BookLove.Views.Pages.BookPage
                 var paragraph = word.ActiveDocument.Paragraphs.Add();
                 var tableRange = paragraph.Range;
                 var books = AppData.db.Book.ToList();
-                var table = document.Tables.Add(tableRange, books.Count, 5);
+                var table = document.Tables.Add(tableRange, books.Count, 6);
                 table.Borders.Enable = 1;
                 table.Cell(1, 0).Range.Text = "Наименование";
                 table.Cell(1, 1).Range.Text = "Автор";
                 table.Cell(1, 2).Range.Text = "Жанр";
                 table.Cell(1, 3).Range.Text = "Издатель";
-                table.Cell(1, 5).Range.Text = "Количество";
-                table.Cell(1, 4).Range.Text = "Цена";
+                table.Cell(1, 4).Range.Text = "Количество";
+                table.Cell(1, 5).Range.Text = "Цена";
                 int i = 2;
                 foreach (var item in books)
                 {
@@ -114,7 +114,7 @@ namespace BookLove.Views.Pages.BookPage
                     writer.WriteLine("Наименование;Автор;Жанр;Издатель;Цена;Количество");
                     foreach (var item in books)
                     {
-                        writer.WriteLine($"{item.title};{item.Author.GetFullName};{item.Genre.title};{item.Publisher};{item.count}");
+                        writer.WriteLine($"{item.title};{item.Author.GetFullName};{item.Genre.title};{item.Publisher.titile};{item.count}");
                     }
                 }
             }
