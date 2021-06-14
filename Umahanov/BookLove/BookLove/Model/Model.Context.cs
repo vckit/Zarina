@@ -27,12 +27,14 @@ namespace BookLove.Model
     
         public virtual DbSet<Author> Author { get; set; }
         public virtual DbSet<Book> Book { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<Genre> Genre { get; set; }
         public virtual DbSet<Login> Login { get; set; }
         public virtual DbSet<Provider> Provider { get; set; }
         public virtual DbSet<Publisher> Publisher { get; set; }
         public virtual DbSet<Registration> Registration { get; set; }
         public virtual DbSet<Supple> Supple { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Basket> Basket { get; set; }
     }
 }

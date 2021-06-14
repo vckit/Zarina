@@ -15,5 +15,12 @@ namespace BookLove.Model
                 pucture = value;
             }
         }
+        public string GetFullTitle
+        {
+            get
+            {
+                return $"{title}, {price}";
+            }
+        }
     }
 }

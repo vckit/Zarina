@@ -18,6 +18,7 @@ namespace BookLove.Model
         public Provider()
         {
             this.Supple = new HashSet<Supple>();
+            this.Basket = new HashSet<Basket>();
         }
     
         public int id { get; set; }
@@ -26,5 +27,7 @@ namespace BookLove.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Supple> Supple { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Basket> Basket { get; set; }
     }
 }

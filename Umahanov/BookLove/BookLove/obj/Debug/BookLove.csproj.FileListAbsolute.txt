@@ -58,3 +58,9 @@ A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\
 A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.csproj.CopyComplete
 A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookActionPage.g.cs
 A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookActionPage.baml
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\ClientPage\CreateClientPage.g.cs
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\OrderCreatePage.g.cs
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\ClientPage\CreateClientPage.baml
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\OrderCreatePage.baml
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\HistoryOrderPage.g.cs
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\HistoryOrderPage.baml

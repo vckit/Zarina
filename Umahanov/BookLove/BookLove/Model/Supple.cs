@@ -17,11 +17,14 @@ namespace BookLove.Model
         public int id { get; set; }
         public int idProvider { get; set; }
         public int idBook { get; set; }
+        public int idClient { get; set; }
         public System.DateTime dateSupple { get; set; }
         public string description { get; set; }
         public double totalPrice { get; set; }
+        public int count { get; set; }
     
         public virtual Book Book { get; set; }
+        public virtual Client Client { get; set; }
         public virtual Provider Provider { get; set; }
     }
 }

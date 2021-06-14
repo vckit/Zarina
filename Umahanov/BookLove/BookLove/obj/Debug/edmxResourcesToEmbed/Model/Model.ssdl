@@ -9,6 +9,17 @@
     <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="secondName" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Basket">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idClient" Type="int" Nullable="false" />
+    <Property Name="idProvider" Type="int" Nullable="false" />
+    <Property Name="idBook" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="totalPrice" Type="float" Nullable="false" />
+  </EntityType>
   <EntityType Name="Book">
     <Key>
       <PropertyRef Name="id" />
@@ -21,6 +32,22 @@
     <Property Name="count" Type="int" Nullable="false" />
     <Property Name="price" Type="float" Nullable="false" />
     <Property Name="pucture" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idCity" Type="int" Nullable="false" />
+    <Property Name="street" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="Genre">
     <Key>
@@ -71,20 +98,48 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idProvider" Type="int" Nullable="false" />
     <Property Name="idBook" Type="int" Nullable="false" />
+    <Property Name="idClient" Type="int" Nullable="false" />
     <Property Name="dateSupple" Type="date" Nullable="false" />
     <Property Name="description" Type="nvarchar" MaxLength="500" />
     <Property Name="totalPrice" Type="float" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
+  <Association Name="FK_Basket_Book">
+    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idBook" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basket_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basket_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idProvider" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Book_Author">
     <End Role="Author" Type="Self.Author" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -123,6 +178,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Client_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="idCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Registration_Login">
     <End Role="Login" Type="Self.Login" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -138,7 +205,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Supple_Book1">
-    <End Role="Book" Type="Self.Book" Multiplicity="1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Supple" Type="Self.Supple" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Book">
@@ -146,6 +215,20 @@
       </Principal>
       <Dependent Role="Supple">
         <PropertyRef Name="idBook" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supple_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Supple" Type="Self.Supple" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Supple">
+        <PropertyRef Name="idClient" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -163,14 +246,28 @@
   </Association>
   <EntityContainer Name="dbBookLoveModelStoreContainer">
     <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Basket" EntityType="Self.Basket" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Supple" EntityType="Self.Supple" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Basket_Book" Association="Self.FK_Basket_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basket_Client" Association="Self.FK_Basket_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basket_Provider" Association="Self.FK_Basket_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
     <AssociationSet Name="FK_Book_Author" Association="Self.FK_Book_Author">
       <End Role="Author" EntitySet="Author" />
       <End Role="Book" EntitySet="Book" />
@@ -183,12 +280,20 @@
       <End Role="Publisher" EntitySet="Publisher" />
       <End Role="Book" EntitySet="Book" />
     </AssociationSet>
+    <AssociationSet Name="FK_Client_City" Association="Self.FK_Client_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
     <AssociationSet Name="FK_Registration_Login" Association="Self.FK_Registration_Login">
       <End Role="Login" EntitySet="Login" />
       <End Role="Registration" EntitySet="Registration" />
     </AssociationSet>
     <AssociationSet Name="FK_Supple_Book1" Association="Self.FK_Supple_Book1">
       <End Role="Book" EntitySet="Book" />
+      <End Role="Supple" EntitySet="Supple" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supple_Client" Association="Self.FK_Supple_Client">
+      <End Role="Client" EntitySet="Client" />
       <End Role="Supple" EntitySet="Supple" />
     </AssociationSet>
     <AssociationSet Name="FK_Supple_Provider" Association="Self.FK_Supple_Provider">

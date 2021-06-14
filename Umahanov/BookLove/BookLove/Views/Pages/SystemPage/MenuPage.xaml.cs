@@ -1,5 +1,7 @@
 ﻿using BookLove.Model;
 using BookLove.Views.Pages.BookPage;
+using BookLove.Views.Pages.ClientPage;
+using BookLove.Views.Pages.OrderPage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,16 @@ namespace BookLove.Views.Pages.SystemPage
         private void BookActionPage_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new BookViewPage());
+        }
+
+        private void CreateOrderPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CreateClientPage(new Client()));
+        }
+
+        private void HistoryPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new HistoryOrderPage());
         }
     }
 }

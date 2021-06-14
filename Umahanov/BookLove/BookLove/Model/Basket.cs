@@ -12,12 +12,17 @@ namespace BookLove.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Basket
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id { get; set; }
+        public int idClient { get; set; }
+        public int idProvider { get; set; }
+        public int idBook { get; set; }
+        public int count { get; set; }
+        public double totalPrice { get; set; }
+    
+        public virtual Book Book { get; set; }
+        public virtual Client Client { get; set; }
+        public virtual Provider Provider { get; set; }
     }
 }

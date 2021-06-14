@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\App.xaml
-61855314738
+91044116243
 2482335943
-26-1854371945
-18793237224
-Views\Pages\BookPage\BookActionPage.xaml;Views\Pages\BookPage\BookViewPage.xaml;Views\Pages\SystemPage\LoginPage.xaml;Views\Pages\SystemPage\MenuPage.xaml;Views\Pages\SystemPage\RegistrationPage.xaml;Views\Windows\MainWindow.xaml;
+321113654125
+19-516854300
+Views\Pages\BookPage\BookActionPage.xaml;Views\Pages\BookPage\BookViewPage.xaml;Views\Pages\ClientPage\CreateClientPage.xaml;Views\Pages\OrderPage\HistoryOrderPage.xaml;Views\Pages\OrderPage\OrderCreatePage.xaml;Views\Pages\SystemPage\LoginPage.xaml;Views\Pages\SystemPage\MenuPage.xaml;Views\Pages\SystemPage\RegistrationPage.xaml;Views\Windows\MainWindow.xaml;
 
 False
 

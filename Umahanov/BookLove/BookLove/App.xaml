@@ -20,6 +20,14 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontFamily" Value="Century Gothic"/>
         </Style>
+        <Style TargetType="Button" x:Key="historyPageButtonStyle">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Century Gothic"/>
+        </Style>
 
     </Application.Resources>
 </Application>

@@ -4,22 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0cd0b759c2d740c0a25819042dd10b42" Name="Diagram1">
-        <EntityTypeShape EntityType="dbBookLoveModel.Author" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+      <Diagram DiagramId="6bef8eceaef24903b353cd6fff9b7aea" Name="Diagram1">
+        <EntityTypeShape EntityType="dbBookLoveModel.Author" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="dbBookLoveModel.Book" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbBookLoveModel.Genre" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbBookLoveModel.Login" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbBookLoveModel.Provider" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbBookLoveModel.Publisher" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbBookLoveModel.Registration" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbBookLoveModel.Supple" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBookLoveModel.City" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBookLoveModel.Client" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBookLoveModel.Genre" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBookLoveModel.Login" Width="1.5" PointX="5.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBookLoveModel.Provider" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBookLoveModel.Publisher" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBookLoveModel.Registration" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbBookLoveModel.Supple" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="dbBookLoveModel.FK_Book_Author" ManuallyRouted="false" />
         <AssociationConnector Association="dbBookLoveModel.FK_Book_Genre" ManuallyRouted="false" />
         <AssociationConnector Association="dbBookLoveModel.FK_Book_Publisher" ManuallyRouted="false" />
         <AssociationConnector Association="dbBookLoveModel.FK_Supple_Book1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbBookLoveModel.FK_Client_City" ManuallyRouted="false" />
+        <AssociationConnector Association="dbBookLoveModel.FK_Supple_Client" ManuallyRouted="false" />
         <AssociationConnector Association="dbBookLoveModel.FK_Registration_Login" ManuallyRouted="false" />
         <AssociationConnector Association="dbBookLoveModel.FK_Supple_Provider" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="dbBookLoveModel.sysdiagrams" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="dbBookLoveModel.Basket" Width="1.5" PointX="5.25" PointY="9.625" />
+        <AssociationConnector Association="dbBookLoveModel.FK_Basket_Book" />
+        <AssociationConnector Association="dbBookLoveModel.FK_Basket_Client" />
+        <AssociationConnector Association="dbBookLoveModel.FK_Basket_Provider" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -23,6 +23,68 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Экспорт: "
+                           VerticalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"/>
+                <Button Style="{StaticResource historyPageButtonStyle}"
+                        Content=".PDF"
+                        Click="btnPDFExport_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Style="{StaticResource historyPageButtonStyle}"
+                        Content=".CSV"
+                        Click="btnCSVExport_Click"
+                        Margin="10,0,0,0">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Text="Поиск: "/>
+                    <TextBox Name="txbSearch"
+                             TextChanged="txbSearch_TextChanged"
+                             Width="250"/>
+                </StackPanel>
+                <StackPanel Margin="10,0,0,0">
+                    <TextBlock Text="Фильтрация по Жанру"/>
+                    <ComboBox Width="250"
+                              Name="cmbFilterGender"
+                              SelectionChanged="cmbFilterGender_SelectionChanged">
+                        <ComboBoxItem>Все типы</ComboBoxItem>
+                        <ComboBoxItem>Роман</ComboBoxItem>
+                        <ComboBoxItem>Саморазвитие</ComboBoxItem>
+                        <ComboBoxItem>Детектив</ComboBoxItem>
+                        <ComboBoxItem>Дорама</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                    
+
+            </StackPanel>
+        </Grid>
+
         <Grid Grid.Row="1">
             <ListView Name="BookListView">
                 <ListView.ItemTemplate>
