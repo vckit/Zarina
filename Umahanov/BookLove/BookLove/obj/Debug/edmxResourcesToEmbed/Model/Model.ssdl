@@ -13,13 +13,14 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="title" Type="nvarchar" MaxLength="50" />
     <Property Name="idAuthor" Type="int" Nullable="false" />
     <Property Name="idGenre" Type="int" Nullable="false" />
     <Property Name="idPublisher" Type="int" Nullable="false" />
     <Property Name="count" Type="int" Nullable="false" />
     <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="pucture" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="Genre">
     <Key>
@@ -73,6 +74,16 @@
     <Property Name="dateSupple" Type="date" Nullable="false" />
     <Property Name="description" Type="nvarchar" MaxLength="500" />
     <Property Name="totalPrice" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_Book_Author">
     <End Role="Author" Type="Self.Author" Multiplicity="1">
@@ -159,6 +170,7 @@
     <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Supple" EntityType="Self.Supple" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Book_Author" Association="Self.FK_Book_Author">
       <End Role="Author" EntitySet="Author" />
       <End Role="Book" EntitySet="Book" />

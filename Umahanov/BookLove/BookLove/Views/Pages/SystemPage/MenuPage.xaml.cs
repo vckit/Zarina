@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BookLove.Model;
+using BookLove.Views.Pages.BookPage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,11 @@ namespace BookLove.Views.Pages.SystemPage
         public MenuPage()
         {
             InitializeComponent();
+        }
+
+        private void BookActionPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BookViewPage());
         }
     }
 }

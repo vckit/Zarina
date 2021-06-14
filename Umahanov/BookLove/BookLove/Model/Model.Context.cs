@@ -33,5 +33,6 @@ namespace BookLove.Model
         public virtual DbSet<Publisher> Publisher { get; set; }
         public virtual DbSet<Registration> Registration { get; set; }
         public virtual DbSet<Supple> Supple { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

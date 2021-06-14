@@ -64,6 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\Pages\BookPage\BookActionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\BookPage\BookViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +121,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\PartialAuthor.cs" />
+    <Compile Include="Model\PartialBook.cs" />
     <Compile Include="Model\Provider.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -128,6 +134,12 @@
     </Compile>
     <Compile Include="Model\Supple.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\BookPage\BookActionPage.xaml.cs">
+      <DependentUpon>BookActionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\BookPage\BookViewPage.xaml.cs">
       <DependentUpon>BookViewPage.xaml</DependentUpon>

@@ -27,6 +27,7 @@ namespace BookLove.Model
         public int idPublisher { get; set; }
         public int count { get; set; }
         public double price { get; set; }
+        public string pucture { get; set; }
     
         public virtual Author Author { get; set; }
         public virtual Genre Genre { get; set; }

@@ -12,7 +12,8 @@
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center">
             <Button Style="{StaticResource functionButtonStyle}"
-                    Content="Книги">
+                    Content="Книги"
+                    Click="BookActionPage_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"/>

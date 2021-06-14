@@ -46,3 +46,15 @@ C:\Users\thevckit\Downloads\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove
 C:\Users\thevckit\Downloads\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.csproj.CopyComplete
 C:\Users\thevckit\Downloads\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.exe
 C:\Users\thevckit\Downloads\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.pdb
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\EntityFramework.dll
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\EntityFramework.SqlServer.dll
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\EntityFramework.xml
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\EntityFramework.SqlServer.xml
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookViewPage.g.cs
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\SystemPage\RegistrationPage.g.cs
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove_Content.g.cs
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookViewPage.baml
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\SystemPage\RegistrationPage.baml
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.csproj.CopyComplete
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookActionPage.g.cs
+A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookActionPage.baml

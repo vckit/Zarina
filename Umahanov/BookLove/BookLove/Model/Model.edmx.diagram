@@ -19,6 +19,7 @@
         <AssociationConnector Association="dbBookLoveModel.FK_Supple_Book1" ManuallyRouted="false" />
         <AssociationConnector Association="dbBookLoveModel.FK_Registration_Login" ManuallyRouted="false" />
         <AssociationConnector Association="dbBookLoveModel.FK_Supple_Provider" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbBookLoveModel.sysdiagrams" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
