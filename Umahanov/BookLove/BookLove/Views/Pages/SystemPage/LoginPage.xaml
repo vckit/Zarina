@@ -30,15 +30,15 @@
                 <TextBlock Text="Логин: "
                            Width="120"/>
                 <TextBox Name="txbLogin" 
-                         Width="250"/>
+                         Width="350"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Пароль: "
                            Width="120"/>
                 <PasswordBox Name="psbPassword"
-                             Width="250"/>
-                <TextBox Width="250"
+                             Width="350"/>
+                <TextBox Width="350"
                              Name="PasswordTextBox"
                              Visibility="Collapsed"
                              Text="{Binding ElementName=psbPassword, Path=Password, Mode=TwoWay}"/>
@@ -51,7 +51,7 @@
                                Name="txbCaptchaText"
                                Width="120"/>
                     <TextBox Name="CaptchaTextBox"
-                             Width="100"/>
+                             Width="200"/>
                 </StackPanel>
                 <Button Content="Repack"
                             Name="btnRepack"
@@ -71,6 +71,7 @@
                 </Button.Resources>
             </Button>
             <Button Content="Войти"
+                    IsDefault="True"
                     Name="LoginButton"
                     Style="{StaticResource nowidhtButtonStyle}"
                     Click="LoginButton_Click"

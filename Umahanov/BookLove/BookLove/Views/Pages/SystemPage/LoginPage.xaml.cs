@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookLove.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,26 @@ namespace BookLove.Views.Pages.SystemPage
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var currentLogin = AppData.db.Login.FirstOrDefault(item => item.username == txbLogin.Text && item.password == psbPassword.Password);
+            if (txbCaptchaText.Text == CaptchaTextBox.Text)
+            {
+                if (currentLogin != null)
+                {
+                    NavigationService.Navigate(new MenuPage());
+                }
+                else
+                {
+                    MessageBox.Show("Такого пользователя не существует!", "В доступе отказано!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    txbCaptchaText.Text = GetCaptchaCode();
+                    StackCaptche.Visibility = Visibility;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Вы не прошли капчу, пожалуйста повторите попытку", "Вниманиме!", MessageBoxButton.OK, MessageBoxImage.Error);
+                txbCaptchaText.Text = GetCaptchaCode();
+                StackCaptche.Visibility = Visibility;
+            }
         }
         string GetCaptchaCode()
         {
@@ -55,7 +75,7 @@ namespace BookLove.Views.Pages.SystemPage
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new RegistrationPage());
         }
 
         private void Repack_Click(object sender, RoutedEventArgs e)
