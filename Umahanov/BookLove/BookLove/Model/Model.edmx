@@ -83,6 +83,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="titile" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="contact" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Registration">
           <Key>
@@ -392,6 +394,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="titile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Book" Relationship="Self.FK_Book_Publisher" FromRole="Publisher" ToRole="Book" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Registration">
           <Key>
@@ -710,6 +714,8 @@
           <EntitySetMapping Name="Publisher">
             <EntityTypeMapping TypeName="dbBookLoveModel.Publisher">
               <MappingFragment StoreEntitySet="Publisher">
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="titile" ColumnName="titile" />
               </MappingFragment>

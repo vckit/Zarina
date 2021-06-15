@@ -64,3 +64,47 @@ A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\
 A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\OrderCreatePage.baml
 A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\HistoryOrderPage.g.cs
 A:\GitHub\My-Repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\HistoryOrderPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\BookLove.exe.config
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\BookLove.exe
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\BookLove.pdb
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\EntityFramework.dll
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\EntityFramework.xml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.csproj.AssemblyReference.cache
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookActionPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookViewPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\ClientPage\CreateClientPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\HistoryOrderPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\OrderCreatePage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\ProviderPage\ProviderViewPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\SystemPage\LoginPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\SystemPage\MenuPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\SystemPage\RegistrationPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Windows\MainWindow.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\App.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove_Content.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove_MarkupCompile.cache
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove_MarkupCompile.lref
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\App.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookActionPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\BookPage\BookViewPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\ClientPage\CreateClientPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\HistoryOrderPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\OrderPage\OrderCreatePage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\SystemPage\LoginPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\SystemPage\MenuPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\SystemPage\RegistrationPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Windows\MainWindow.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\ProviderPage\ProviderViewPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.g.resources
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.Properties.Resources.resources
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.csproj.GenerateResource.cache
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.csproj.CoreCompileInputs.cache
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.csproj.CopyComplete
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.exe
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\BookLove.pdb
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\ProviderPage\ProviderActionPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\ProviderPage\ProviderActionPage.baml
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\PublisherPage\PublisherAddPage.g.cs
+C:\Users\thevc\Documents\Coding\GitHub\my repository\Zarina\Umahanov\BookLove\BookLove\obj\Debug\Views\Pages\PublisherPage\PublisherAddPage.baml

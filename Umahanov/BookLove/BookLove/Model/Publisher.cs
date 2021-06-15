@@ -22,6 +22,8 @@ namespace BookLove.Model
     
         public int id { get; set; }
         public string titile { get; set; }
+        public string address { get; set; }
+        public string contact { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Book> Book { get; set; }

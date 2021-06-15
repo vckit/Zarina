@@ -2,6 +2,7 @@
 using BookLove.Views.Pages.BookPage;
 using BookLove.Views.Pages.ClientPage;
 using BookLove.Views.Pages.OrderPage;
+using BookLove.Views.Pages.ProviderPage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,11 @@ namespace BookLove.Views.Pages.SystemPage
         private void HistoryPage_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new HistoryOrderPage());
+        }
+
+        private void ProviderButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ProviderViewPage());
         }
     }
 }

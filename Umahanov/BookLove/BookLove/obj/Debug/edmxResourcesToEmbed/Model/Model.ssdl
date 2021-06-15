@@ -78,6 +78,8 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="titile" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="contact" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Registration">
     <Key>

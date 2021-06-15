@@ -137,6 +137,7 @@ namespace BookLove.Views.Pages.OrderPage
             {
                 Supple supple = new Supple();
                 Basket basket = new Basket();
+                Book book = new Book();
                 supple.idClient = _idClient;
                 supple.idBook = _idBook;
                 supple.dateSupple = DateTime.Now;
@@ -145,6 +146,8 @@ namespace BookLove.Views.Pages.OrderPage
                 supple.idProvider = _idProvider;
                 supple.description = txbDescription.Text;
                 AppData.db.Supple.Add(supple);
+                var selectedCount = AppData.db.Book.FirstOrDefault(item => item.id == supple.idBook);
+                selectedCount.count = _balance;
                 basket.idClient = _idClient;
                 basket.idBook = _idBook;
                 basket.idProvider = _idProvider;

@@ -88,6 +88,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\ProviderPage\ProviderActionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\ProviderPage\ProviderViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\PublisherPage\PublisherAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\SystemPage\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +187,15 @@
     </Compile>
     <Compile Include="Views\Pages\OrderPage\OrderCreatePage.xaml.cs">
       <DependentUpon>OrderCreatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ProviderPage\ProviderActionPage.xaml.cs">
+      <DependentUpon>ProviderActionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ProviderPage\ProviderViewPage.xaml.cs">
+      <DependentUpon>ProviderViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\PublisherPage\PublisherAddPage.xaml.cs">
+      <DependentUpon>PublisherAddPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\SystemPage\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>

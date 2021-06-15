@@ -29,9 +29,12 @@ namespace BookLove.Views.Pages.BookPage
         private void EditBookPage_Click(object sender, RoutedEventArgs e)
         {
             var selectedBook = BookListView.SelectedItem as Book;
-            var selectedAuthor = selectedBook.Author;
             if (selectedBook != null)
+            {
+                var selectedAuthor = selectedBook.Author;
+
                 NavigationService.Navigate(new BookActionPage(selectedBook, selectedAuthor));
+            }
             else
                 MessageBox.Show("Чтобы редактировать запись, вам необходимо его выбрать.", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }

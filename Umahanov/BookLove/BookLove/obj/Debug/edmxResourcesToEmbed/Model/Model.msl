@@ -72,6 +72,8 @@
     <EntitySetMapping Name="Publisher">
       <EntityTypeMapping TypeName="dbBookLoveModel.Publisher">
         <MappingFragment StoreEntitySet="Publisher">
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="titile" ColumnName="titile" />
         </MappingFragment>

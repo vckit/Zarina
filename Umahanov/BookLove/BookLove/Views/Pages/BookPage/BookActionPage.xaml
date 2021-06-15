@@ -70,6 +70,16 @@
                         </Style>
                     </Button.Resources>
                 </Button>
+                <Button Style="{StaticResource nowidhtButtonStyle}"
+                        Margin="0,5"
+                        Content="Добавить издателя"
+                        Click="ButtonPublisher_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>

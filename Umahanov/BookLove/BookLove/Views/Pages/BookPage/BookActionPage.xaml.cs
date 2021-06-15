@@ -1,5 +1,6 @@
 ﻿using BookLove.Context;
 using BookLove.Model;
+using BookLove.Views.Pages.PublisherPage;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,11 @@ namespace BookLove.Views.Pages.BookPage
             MessageBox.Show("Данные успешно сохранены в Базе Данных.", "Внимание, операция прошла успешно!", MessageBoxButton.OK, MessageBoxImage.Information);
             GC.Collect();
             NavigationService.GoBack();
+        }
+
+        private void ButtonPublisher_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PublisherAddPage(new Publisher()));
         }
     }
 }

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BookLove.Views.Pages.OrderPage"
       mc:Ignorable="d" 
-     FontSize="16"
+      FontSize="16" FontFamily="Century Gothic"
       d:DesignHeight="700" d:DesignWidth="1280"
       Title="Создать заказ">
 
@@ -35,7 +35,7 @@
                          TextWrapping="Wrap"/>
                 <TextBlock Text="Цена: "/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Width="200" 
+                    <TextBlock Width="190" 
                              Name="txbTotalPrice"/>
                     <Button Content="+"
                             Margin="10,0,0,0"
@@ -43,10 +43,10 @@
                                 Click="btnUp_Click"
                                 Width="30"/>
                     <TextBlock Text="0"
-                                   Name="txbCount"
-                                   Width="15"
-                                   Margin="5,0"
-                                   VerticalAlignment="Center"/>
+                               Name="txbCount"
+                               Width="30"
+                               Margin="5,0"
+                               VerticalAlignment="Center"/>
                     <Button Content="-"
                                 FontSize="20"
                                 Width="30"
