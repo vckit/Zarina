@@ -114,12 +114,11 @@ namespace JewerlyStore.View.Pages
                 // письмо представляет код html
                 m.IsBodyHtml = true;
                 // адрес smtp-сервера и порт, с которого будем отправлять письмо
-                SmtpClient smtp = new SmtpClient("smtp.mail.ru", 587);
+                SmtpClient smtp = new SmtpClient("smtp.mail.ru", 25);
                 // логин и пароль
-                smtp.Credentials = new NetworkCredential("jewralyapp@mail.ru", "@Lacky12345");
+                smtp.Credentials = new NetworkCredential("jewralyapp@mail.ru", "@Lucky090");
                 smtp.EnableSsl = true;
                 await smtp.SendMailAsync(m);
-                Console.Read();
                 MessageBox.Show("Ваш запрос отправлен, Администратор системы рассмотрит ваш запрос как можно быстрее. Дождитесь пожалуйста ответа.",
                     "Запрос успешно отправлен!", MessageBoxButton.OK, MessageBoxImage.Information);
             }

@@ -14,7 +14,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid Background="#FFECECEC" Grid.Column="1">
+        <Grid Background="White" Grid.Column="1">
             <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Orientation="Vertical">
@@ -68,9 +68,9 @@
         </Grid>
 
         <Grid Grid.Column="0"
-              Background="#FFECECEC">
-            <Image Source="/Resources/la.png"/>
+              Background="White">
+            <Image Source="/Resources/ZolotoKaspiy.png" OpacityMask="White"/>
         </Grid>
     </Grid>
-    
+
 </Page>

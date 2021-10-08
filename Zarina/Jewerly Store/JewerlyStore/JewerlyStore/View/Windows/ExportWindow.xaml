@@ -21,7 +21,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button Width="150"
                         Click="btnPDF_Click"
-                        Content="PDF"
+                        Content="DOCX"
                         materialDesign:ButtonAssist.CornerRadius="5"
                         Foreground="White"
                         Background="Black"/>

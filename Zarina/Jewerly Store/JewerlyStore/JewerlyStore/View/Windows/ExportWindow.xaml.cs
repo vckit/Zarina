@@ -32,8 +32,9 @@ namespace JewerlyStore.View.Windows
                 var paragraph = word.ActiveDocument.Paragraphs.Add();
                 var tableRange = paragraph.Range;
                 var jewerlyList = ConnectClass.db.Jewelry.ToList();
-                var table = document.Tables.Add(tableRange, jewerlyList.Count, 7);
+                var table = document.Tables.Add(tableRange, jewerlyList.Count, 8);
                 table.Borders.Enable = 1;
+                table.Cell(1, 0).Range.Text = "ID";
                 table.Cell(1, 1).Range.Text = "Наименование";
                 table.Cell(1, 2).Range.Text = "Категория";
                 table.Cell(1, 3).Range.Text = "Материал";
@@ -50,14 +51,14 @@ namespace JewerlyStore.View.Windows
                     table.Cell(i, 1).Range.Text = item.JewName;
                     table.Cell(i, 2).Range.Text = item.Category.Title;
                     table.Cell(i, 3).Range.Text = item.Material;
-                    table.Cell(i, 4).Range.Text = (item.Pice).ToString();
+                    table.Cell(i, 4).Range.Text = item.Pice.ToString();
                     table.Cell(i, 5).Range.Text = item.Parameters.Height;
                     table.Cell(i, 6).Range.Text = item.Parameters.Width;
                     table.Cell(i, 7).Range.Text = item.Parameters.Weight;
-                    table.Cell(i, 7).Range.Text = item.Count.ToString();
+                    table.Cell(i, 8).Range.Text = item.Count.ToString();
                     i++;
                 }
-                document.SaveAs2(Environment.CurrentDirectory + @"parts.pdf", Word.WdSaveFormat.wdFormatPDF);
+                document.SaveAs2(Environment.CurrentDirectory + "parts.docx");
                 document.Close(Word.WdSaveOptions.wdDoNotSaveChanges);
                 word.Quit(Word.WdSaveOptions.wdDoNotSaveChanges);
                 MessageBox.Show("Сохранение прошло успешно!", "Сохранено!", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -74,13 +75,13 @@ namespace JewerlyStore.View.Windows
             var jewelry = ConnectClass.db.Jewelry.ToList();
             var option = new JsonSerializerOptions() { Encoder = JavaScriptEncoder.Create(UnicodeRanges.All) };
             string line = JsonSerializer.Serialize<List<Jewelry>>(jewelry, option);
-            File.WriteAllText(Environment.CurrentDirectory + @"parts.json", line);
+            File.WriteAllText(Environment.CurrentDirectory + "parts.json", line);
             MessageBox.Show("Сохранение прошло успешно!", "Сохранено!", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void ExportCSV()
         {
-            using (FileStream stream = new FileStream(Environment.CurrentDirectory + @"parts.csv", FileMode.Create))
+            using (FileStream stream = new FileStream(Environment.CurrentDirectory + "parts.csv", FileMode.Create))
             {
                 using (StreamWriter writer = new StreamWriter(stream))
                 {
@@ -97,9 +98,9 @@ namespace JewerlyStore.View.Windows
         private void btnPDF_Click(object sender, RoutedEventArgs e)
         {
             ExportPDF();
-            if (MessageBox.Show("Документ PDF успешно сформирован. Хотите открыть его?", "Операция прошла успешно!", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Документ DOCX успешно сформирован. Хотите открыть его?", "Операция прошла успешно!", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
             {
-                Process.Start(Environment.CurrentDirectory + @"parts.pdf");
+                Process.Start(Environment.CurrentDirectory + @"parts.docx");
             }
             this.Close();
         }
